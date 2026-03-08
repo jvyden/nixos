@@ -20,8 +20,14 @@
   security.sudo.enable = true;
 
   # mdns
-  networking.firewall.allowedUDPPorts = [ 5353 ];
-  systemd.network.networks = {
-    "99-ethernet-default-dhcp".networkConfig.MulticastDNS = "yes";
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    ipv4 = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      workstation = true;
+    };
   };
 }
