@@ -1,3 +1,3 @@
 #!/bin/bash
 
-nixos-rebuild-ng --flake .#jvyden-pi5 --target-host jvyden@jvyden-pi5.local --sudo --ask-sudo-password switch
+nixos-rebuild --flake .#jvyden-pi5 --target-host jvyden@jvyden-pi5.local --build-host jvyden@jvyden-pi5.local --sudo --ask-sudo-password switch
