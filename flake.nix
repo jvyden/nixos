@@ -33,6 +33,7 @@
           modules = [
             ./modules/common.nix
             ./modules/rpi5.nix
+            ./modules/common-cli.nix
             (
               { ... }:
               {
