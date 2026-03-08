@@ -43,6 +43,9 @@
   # Continuwuity
   age.secrets."continuwuity-turn-secret" = {
     file = ../secrets/continuwuity-turn-secret.age;
+    mode = "770";
+    owner = "continuwuity";
+    group = "continuwuity";
   };
   services.matrix-continuwuity = {
     enable = true;
