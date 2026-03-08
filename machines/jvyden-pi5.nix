@@ -23,7 +23,7 @@
     file = ../secrets/jvyden-pi5-cloudflared.age;
   };
   services.cloudflared = {
-    enable = false; # FIXME
+    enable = true;
     tunnels."58bbed97-af54-45de-adff-d582ca4be8f9" = {
       credentialsFile = "${config.age.secrets."jvyden-pi5-cloudflared".path}";
       ingress = {
