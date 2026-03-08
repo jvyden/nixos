@@ -7,5 +7,6 @@
     btop
     fastfetch
     nano
+    agenix-cli
   ];
 }

@@ -2,6 +2,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -21,16 +25,25 @@
       self,
       nixpkgs,
       nixos-raspberrypi,
+      agenix,
       ...
     }@inputs:
     {
       # NixOS installer for Raspberry Pi 5
       packages.aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;
 
+      devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        packages = with nixpkgs.legacyPackages.x86_64-linux; [
+          nixos-rebuild-ng
+        ]
+        ++ [ agenix.packages.x86_64-linux.default ];
+      };
+
       nixosConfigurations = {
         jvyden-pi5 = nixos-raspberrypi.lib.nixosSystem {
           specialArgs = inputs;
           modules = [
+            agenix.nixosModules.default
             ./modules/common.nix
             ./modules/rpi5.nix
             ./modules/common-cli.nix

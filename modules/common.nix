@@ -1,11 +1,17 @@
-{ ... }:
+{ config, ... }:
 
 {
+  age.secrets.password = {
+    file = ../secrets/password.age;
+  };
+
   system.stateVersion = "25.11";
+
   boot.tmp.useTmpfs = true;
   nix.settings.trusted-users = [ "jvyden" ];
+
   users.users.jvyden = {
-    initialPassword = "weed";
+    hashedPasswordFile = config.age.secrets.password.path;
     isNormalUser = true;
     extraGroups = [
       "wheel"
