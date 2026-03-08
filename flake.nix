@@ -24,57 +24,37 @@
       ...
     }@inputs:
     {
-      packages.aarch64-linux.default =
-        let
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            crossSystem = {
-              config = "aarch64-unknown-linux-gnu";
-            };
-          };
-        in
-        nixos-raspberrypi.installerImages.rpi5;
+      # NixOS installer for Raspberry Pi 5
+      packages.aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;
 
       nixosConfigurations = {
         jvyden-pi5 = nixos-raspberrypi.lib.nixosSystem {
           specialArgs = inputs;
           modules = [
+            ./modules/common.nix
+            ./modules/rpi5.nix
             (
               { ... }:
               {
-                imports = with nixos-raspberrypi.nixosModules; [
-                  raspberry-pi-5.base
-                  raspberry-pi-5.display-vc4
-                ];
-              }
-            )
-            (
-              { ... }:
-              {
-                networking.hostName = "jvyden-pi5";
-                nix.settings.trusted-users = [ "jvyden" ];
-                users.users.jvyden = {
-                  initialPassword = "weed";
-                  isNormalUser = true;
-                  extraGroups = [
-                    "wheel"
-                    "video"
-                    "audio"
-                    "networkmanager"
-                  ];
+                networking = {
+                    hostName = "jvyden-pi5";
+                    defaultGateway = "10.0.0.1";
+                    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+                    interfaces.end0.ipv4.addresses = [
+                        {
+                            address = "10.0.0.228";
+                            prefixLength = 24;
+                        }
+                    ];
                 };
-
-                services.openssh.enable = true;
-                security.polkit.enable = true;
-                security.sudo.enable = true;
               }
             )
             (
               { ... }:
               {
-                # boot.supportedFileSystems = [ "btrfs" ];
+                boot.loader.raspberry-pi.bootloader = "kernel";
                 fileSystems = {
-                  "/boot" = {
+                  "/boot/firmware" = {
                     device = "/dev/disk/by-uuid/433D-E290";
                     fsType = "vfat";
                     options = [
