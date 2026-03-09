@@ -14,6 +14,8 @@
   boot.tmp.useTmpfs = true;
   nix.settings.trusted-users = [ "jvyden" ];
 
+  users.mutableUsers = false;
+
   users.users.jvyden = {
     hashedPasswordFile = config.age.secrets.password.path;
     isNormalUser = true;
