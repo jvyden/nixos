@@ -42,8 +42,13 @@
   };
 
   #nix config
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
     optimise = {
       automatic = true;
     };
@@ -59,7 +64,7 @@
   };
 
   # keep us up to date
-  services.fwupd.enable =  true;
+  services.fwupd.enable = true;
   system.autoUpgrade = {
     enable = true;
     runGarbageCollection = true;
