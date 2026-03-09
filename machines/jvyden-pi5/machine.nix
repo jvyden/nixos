@@ -24,7 +24,18 @@
     ];
   };
 
+  # apply some extra features since we're both constrained on memory and constrained on how much we should be writing
+  # i don't want to kill my sd card :c
+  boot.kernel.sysctl."vm.swappiness" = 20;
+  services.journald = {
+    storage = "volatile";
+    extraConfig = ''
+      RuntimeMaxUse=64M
+    '';
+  };
+
   # Disk setup
+  # try to use noatime when possible
   fileSystems = {
     "/boot/firmware" = {
       device = "/dev/disk/by-uuid/433D-E290";
@@ -42,7 +53,13 @@
       options = [
         "subvol=nixos"
         "compress=zstd:7"
+        "noatime"
       ];
+    };
+    "/var/log" = {
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = ["size=64M"];
     };
     "/home" = {
       device = "/dev/disk/by-uuid/90ae52b4-d5e8-4b80-ae84-dd534b402359";
@@ -50,6 +67,7 @@
       options = [
         "subvol=home"
         "compress=zstd:7"
+        "noatime"
       ];
     };
     "/nix" = {
