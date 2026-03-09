@@ -1,6 +1,10 @@
-{ config, ... }:
+{ config, agenix, ... }:
 
 {
+  imports = [
+    agenix.nixosModules.default
+  ];
+
   age.secrets.password = {
     file = ../secrets/password.age;
   };

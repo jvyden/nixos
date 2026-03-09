@@ -1,50 +1,17 @@
-{ config, pkgs, continuwuity, ... }:
+{ config, continuwuity, pkgs, ... }:
 
 {
-  # Networking setup
-  networking = {
-    hostName = "jvyden-pi5";
-    interfaces.end0.ipv4.addresses = [
-      {
-        address = "10.0.0.228";
-        prefixLength = 24;
-      }
-    ];
-  };
-
-  # SERVICES
-  # Cloudflare Ingress
-  age.secrets."jvyden-pi5-cloudflared" = {
-    file = ../secrets/jvyden-pi5-cloudflared.age;
-  };
-  services.cloudflared = {
-    enable = true;
-    tunnels."58bbed97-af54-45de-adff-d582ca4be8f9" = {
-      credentialsFile = "${config.age.secrets."jvyden-pi5-cloudflared".path}";
-      ingress = {
-        "files.jvyden.xyz" = {
-          service = "http://127.0.0.1:80";
-        };
-        "matrix.jvyden.xyz" = {
-          service = "http://127.0.0.1:8008";
-        };
-        "ooye.jvyden.xyz" = {
-          service = "http://127.0.0.1:6693";
-        };
-      };
-      default = "http_status:404";
-    };
-  };
-  # Continuwuity
   age.secrets."continuwuity-turn-secret" = {
-    file = ../secrets/continuwuity-turn-secret.age;
+    file = ../../secrets/continuwuity-turn-secret.age;
     mode = "770";
     owner = "continuwuity";
     group = "continuwuity";
   };
+
   services.matrix-continuwuity = {
     enable = true;
-    package = continuwuity.outputs.packages.${pkgs.stdenv.hostPlatform.system}.continuwuity-all-features-bin;
+    package =
+      continuwuity.outputs.packages.${pkgs.stdenv.hostPlatform.system}.continuwuity-all-features-bin;
     settings = {
       global = {
         server_name = "jvyden.xyz";
@@ -100,45 +67,6 @@
           ];
         };
       };
-    };
-  };
-
-  # Disk setup
-  fileSystems = {
-    "/boot/firmware" = {
-      device = "/dev/disk/by-uuid/433D-E290";
-      fsType = "vfat";
-      options = [
-        "noatime"
-        "noauto"
-        "x-systemd.automount"
-        "x-systemd.idle-timeout=1min"
-      ];
-    };
-    "/" = {
-      device = "/dev/disk/by-uuid/90ae52b4-d5e8-4b80-ae84-dd534b402359";
-      fsType = "btrfs";
-      options = [
-        "subvol=nixos"
-        "compress=zstd:7"
-      ];
-    };
-    "/home" = {
-      device = "/dev/disk/by-uuid/90ae52b4-d5e8-4b80-ae84-dd534b402359";
-      fsType = "btrfs";
-      options = [
-        "subvol=home"
-        "compress=zstd:7"
-      ];
-    };
-    "/nix" = {
-      device = "/dev/disk/by-uuid/90ae52b4-d5e8-4b80-ae84-dd534b402359";
-      fsType = "btrfs";
-      options = [
-        "subvol=nixos/nix"
-        "compress=zstd:7"
-        "noatime"
-      ];
     };
   };
 }

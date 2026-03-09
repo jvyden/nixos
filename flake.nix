@@ -46,14 +46,7 @@
       nixosConfigurations = {
         jvyden-pi5 = nixos-raspberrypi.lib.nixosSystem {
           specialArgs = inputs;
-          modules = [
-            agenix.nixosModules.default
-            ./modules/common.nix
-            ./modules/rpi5.nix
-            ./modules/common-cli.nix
-            ./modules/home-ethernet.nix
-            ./machines/jvyden-pi5.nix
-          ];
+          modules = [ ./machines/jvyden-pi5/machine.nix ];
         };
       };
     };
