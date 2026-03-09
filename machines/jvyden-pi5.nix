@@ -4,11 +4,6 @@
   # Networking setup
   networking = {
     hostName = "jvyden-pi5";
-    defaultGateway = "10.0.0.1";
-    nameservers = [
-      "1.1.1.1"
-      "1.0.0.1"
-    ];
     interfaces.end0.ipv4.addresses = [
       {
         address = "10.0.0.228";

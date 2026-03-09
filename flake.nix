@@ -51,6 +51,7 @@
             ./modules/common.nix
             ./modules/rpi5.nix
             ./modules/common-cli.nix
+            ./modules/home-ethernet.nix
             ./machines/jvyden-pi5.nix
           ];
         };
