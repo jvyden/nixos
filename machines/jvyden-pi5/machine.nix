@@ -9,6 +9,8 @@
     ./cloudflared.nix
     ./continuwuity.nix
     ./copyparty.nix
+    ./postgres.nix
+    ./immich.nix
   ];
 
   # Networking setup

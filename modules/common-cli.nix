@@ -8,5 +8,8 @@
     fastfetch
     nano
     agenix-cli
+    lsof
+    tmux
+    file
   ];
 }
