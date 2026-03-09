@@ -7,7 +7,7 @@ let
 
   all = users ++ systems;
 in {
-  "secrets/password.age".publicKeys = all;
+  "secrets/password.age".publicKeys = [jvyden] ++ systems;
   "secrets/jvyden-pi5-cloudflared.age".publicKeys = users ++ [jvyden-pi5];
   "secrets/continuwuity-turn-secret.age".publicKeys = users ++ [jvyden-pi5];
 }
