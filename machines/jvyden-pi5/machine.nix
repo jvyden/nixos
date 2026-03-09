@@ -8,6 +8,7 @@
     ../../modules/home-ethernet.nix
     ./cloudflared.nix
     ./continuwuity.nix
+    ./copyparty.nix
   ];
 
   # Networking setup

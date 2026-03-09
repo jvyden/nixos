@@ -10,4 +10,6 @@ in {
   "secrets/password.age".publicKeys = [jvyden] ++ systems;
   "secrets/jvyden-pi5-cloudflared.age".publicKeys = users ++ [jvyden-pi5];
   "secrets/continuwuity-turn-secret.age".publicKeys = users ++ [jvyden-pi5];
+  "secrets/copyparty/jvyden-password.age".publicKeys = users ++ [jvyden-pi5];
+  "secrets/copyparty/localguest-password.age".publicKeys = users ++ [jvyden-pi5];
 }
