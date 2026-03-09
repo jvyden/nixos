@@ -23,7 +23,7 @@
         ensureClauses = {
           login = true;
           superuser = true;
-        }
+        };
       }
     ];
   };
