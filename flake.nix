@@ -40,6 +40,8 @@
           with nixpkgs.legacyPackages.x86_64-linux;
           [
             nixos-rebuild-ng
+            nixos-install
+            nixos-install-tools
           ]
           ++ [ agenix.packages.x86_64-linux.default ];
       };
@@ -48,6 +50,11 @@
         jvyden-pi5 = nixos-raspberrypi.lib.nixosSystem {
           specialArgs = inputs;
           modules = [ ./machines/jvyden-pi5/machine.nix ];
+        };
+        jvyden-thinkpad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = inputs;
+          modules = [ ./machines/jvyden-thinkpad/machine.nix ];
         };
       };
     };

@@ -1,0 +1,62 @@
+{ ... }:
+{
+  imports = [
+    ../../modules/common.nix
+    ../../modules/common-cli.nix
+    ../../modules/home-ethernet.nix
+    ../../modules/battery.nix
+    ../../modules/boot-limine.nix
+  ];
+
+  # Networking setup
+  networking = {
+    hostName = "jvyden-thinkpad";
+    interfaces.enp0s25.ipv4.addresses = [
+      {
+        address = "10.0.0.135";
+        prefixLength = 24;
+      }
+    ];
+  };
+
+  # Disk setup
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/2EF1-C330";
+      fsType = "vfat";
+      options = [
+        "noatime"
+        "noauto"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=1min"
+      ];
+    };
+    "/" = {
+      device = "/dev/disk/by-uuid/fa7d1ff8-c278-4017-8f4f-7c9b05ff9ee5";
+      fsType = "btrfs";
+      options = [
+        "subvol=nixos"
+        "compress=zstd:7"
+        "noatime"
+      ];
+    };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/fa7d1ff8-c278-4017-8f4f-7c9b05ff9ee5";
+      fsType = "btrfs";
+      options = [
+        "subvol=nixos/nix"
+        "compress=zstd:7"
+        "noatime"
+      ];
+    };
+    "/home" = {
+      device = "/dev/disk/by-uuid/fa7d1ff8-c278-4017-8f4f-7c9b05ff9ee5";
+      fsType = "btrfs";
+      options = [
+        "subvol=home"
+        "compress=zstd:7"
+        "noatime"
+      ];
+    };
+  };
+}
