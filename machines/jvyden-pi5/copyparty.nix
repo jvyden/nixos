@@ -62,6 +62,31 @@
       super = ["jvyden"];
     };
 
-    volumes = {};
+    volumes = {
+      "/" = {
+        path = "/var/lib/copyparty/data";
+        access = {
+          A = "@super";
+          r = "*";
+          rwmd = "@acct";
+        };
+      };
+      "/localguest" = {
+        path = "/var/lib/copyparty/localguest";
+        access = {
+          A = "@super";
+          rwmd = "@acct";
+        };
+      };
+      "/obsidian" = {
+        path = "/var/lib/copyparty/obsidian";
+        access = {
+          A = "jvyden";
+        };
+        flags = {
+          d2d = true;
+        };
+      };
+    };
   };
 }
