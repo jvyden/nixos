@@ -1,0 +1,28 @@
+{ pkgs, ... }:
+{
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  hardware.graphics.enable = true;
+
+  services.pipewire.enable = true;
+  xdg.portal = {
+    enable = true;
+  };
+
+  # electron slop may use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  programs.firefox = {
+    enable = true;
+    nativeMessagingHosts.packages = [ pkgs.kdePackages.plasma-browser-integration ];
+    preferences = {
+      "widget.use-xdg-desktop-portal.file-picker" = 1;
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    firefox
+    pavucontrol
+    keepassxc
+    vulkan-tools
+  ];
+}
