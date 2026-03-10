@@ -3,6 +3,16 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   hardware.graphics.enable = true;
 
+  networking = {
+    networkmanager = {
+      enable = true;
+      dns = "none";
+      wifi.powersave = true;
+    };
+    useDHCP = false;
+    dhcpcd.enable = false;
+  };
+
   services.pipewire.enable = true;
   xdg.portal = {
     enable = true;
@@ -24,5 +34,6 @@
     pavucontrol
     keepassxc
     vulkan-tools
+    qpwgraph
   ];
 }

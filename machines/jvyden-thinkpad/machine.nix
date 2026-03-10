@@ -8,6 +8,7 @@
     ../../modules/boot-limine.nix
     ../../modules/kde.nix
     ../../modules/common-desktop.nix
+    ../../modules/gaming.nix
   ];
 
   # Networking setup
