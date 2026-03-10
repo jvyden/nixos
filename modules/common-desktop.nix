@@ -1,7 +1,12 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./kde.nix
+  ];
+
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   hardware.graphics.enable = true;
+  hardware.opentabletdriver.enable = true;
 
   networking = {
     networkmanager = {
@@ -35,5 +40,12 @@
     keepassxc
     vulkan-tools
     qpwgraph
+    gwenview
+    btrfs-assistant
+    filelight
+    fsearch
+    mpv
+    obs-studio
+    obsidian
   ];
 }

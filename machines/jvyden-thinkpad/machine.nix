@@ -6,9 +6,10 @@
     ../../modules/home-ethernet.nix
     ../../modules/battery.nix
     ../../modules/boot-limine.nix
-    ../../modules/kde.nix
     ../../modules/common-desktop.nix
-    ../../modules/gaming.nix
+    ../../modules/kde.nix
+    ../../modules/workloads/gaming.nix
+    ../../modules/workloads/dev.nix
   ];
 
   # Networking setup
