@@ -34,6 +34,8 @@
     {
       # NixOS installer for Raspberry Pi 5
       packages.aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;
+      packages.aarch64-linux.out-of-your-element = nixpkgs.legacyPackages.aarch64-linux.callPackage ./pkgs/out-of-your-element {};
+      packages.x86_64-linux.out-of-your-element = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/out-of-your-element {};
 
       devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
         packages =
@@ -43,7 +45,10 @@
             nixos-install
             nixos-install-tools
           ]
-          ++ [ agenix.packages.x86_64-linux.default ];
+          ++ [
+            agenix.packages.x86_64-linux.default
+            self.packages.x86_64-linux.out-of-your-element
+          ];
       };
 
       nixosConfigurations = {
