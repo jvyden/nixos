@@ -10,6 +10,7 @@
   };
 
   system.stateVersion = "25.11";
+  time.timeZone = "America/New_York";
 
   boot.tmp.useTmpfs = true;
   nix.settings.trusted-users = [ "jvyden" ];
