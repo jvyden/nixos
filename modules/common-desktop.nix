@@ -41,7 +41,7 @@
     vulkan-tools
     qpwgraph
     btrfs-assistant
-    filelight
+    kdePackages.filelight
     fsearch
     mpv
     obs-studio
