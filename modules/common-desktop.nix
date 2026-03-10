@@ -40,7 +40,6 @@
     keepassxc
     vulkan-tools
     qpwgraph
-    gwenview
     btrfs-assistant
     filelight
     fsearch
