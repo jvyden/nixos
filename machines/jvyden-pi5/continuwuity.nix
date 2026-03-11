@@ -2,7 +2,7 @@
 
 {
   imports = [
-    "./out-of-your-element.nix"
+    ./out-of-your-element.nix
   ];
 
   age.secrets."continuwuity-turn-secret" = {
