@@ -4,6 +4,7 @@
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     continuwuity.url = "git+https://forgejo.ellis.link/continuwuation/continuwuity?ref=main&rev=2c7233812b6838a6942ca57d5304ed843ce2bb05";
     copyparty.url = "github:9001/copyparty";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,14 +29,36 @@
       nixpkgs,
       nixos-raspberrypi,
       continuwuity,
+      nix-minecraft,
       agenix,
       ...
     }@inputs:
+    let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems f;
+    in
     {
-      # NixOS installer for Raspberry Pi 5
-      packages.aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;
-      packages.aarch64-linux.out-of-your-element = nixpkgs.legacyPackages.aarch64-linux.callPackage ./pkgs/out-of-your-element {};
-      packages.x86_64-linux.out-of-your-element = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/out-of-your-element {};
+      # custom packages
+      packages = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [ nix-minecraft.overlays.default ];
+            config.allowUnfree = true;
+          };
+        in
+        {
+          out-of-your-element = pkgs.callPackage ./pkgs/out-of-your-element { };
+          uberbukkit = pkgs.callPackage ./pkgs/uberbukkit { };
+
+          # NixOS installer for Raspberry Pi 5
+          aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;
+        }
+      );
 
       devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
         packages =
@@ -47,7 +70,7 @@
           ]
           ++ [
             agenix.packages.x86_64-linux.default
-            self.packages.x86_64-linux.out-of-your-element
+            # self.packages.x86_64-linux.out-of-your-element
           ];
       };
 
