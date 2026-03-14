@@ -11,6 +11,7 @@
     ./copyparty.nix
     ./postgres.nix
     ./immich.nix
+    ./minecraft/minecraft.nix
   ];
 
   # Networking setup
