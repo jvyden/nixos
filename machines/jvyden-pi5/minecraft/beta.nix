@@ -5,7 +5,7 @@
     enable = true;
     package = self.packages.${pkgs.stdenv.hostPlatform.system}.uberbukkit;
     serverProperties = {
-      view-distance = 16;
+      view-distance = 15;
       white-list = true;
     };
     files = {
