@@ -39,6 +39,10 @@
         allow_inbound_profile_lookup_federation_requests = false;
         allow_unstable_room_versions = true;
 
+        allow_local_presence = true;
+        allow_incoming_presence = true;
+        allow_outgoing_presence = true;
+
         turn_uris = [
           "turn:jvyden.xyz?transport=udp"
           "turn:jvyden.xyz?transport=tcp"
