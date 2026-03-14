@@ -5,6 +5,7 @@
     enable = true;
     package = self.packages.${pkgs.stdenv.hostPlatform.system}.uberbukkit;
     serverProperties = {
+      online-mode = true;
       view-distance = 15;
       white-list = true;
     };
