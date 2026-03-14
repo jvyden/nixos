@@ -1,14 +1,14 @@
-{...}:
+{ nix-minecraft, ... }:
 {
   imports = [
-    inputs.nix-minecraft.nixosModules.minecraft-servers
+    nix-minecraft.nixosModules.minecraft-servers
     ./beta.nix
   ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+  nixpkgs.overlays = [ nix-minecraft.overlay ];
 
   services.minecraft-servers = {
     enable = true;
     eula = true;
     openFirewall = true;
-  }
+  };
 }

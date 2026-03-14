@@ -1,9 +1,8 @@
-{ pkgs, ... }:
-
+{ self, pkgs, ... }:
 
 {
-  services.minecraft-servers.beta = {
+  services.minecraft-servers.servers.beta = {
     enable = true;
-    package = pkgs.uberbukkit;
+    package = self.packages.${pkgs.stdenv.hostPlatform.system}.uberbukkit;
   };
 }
