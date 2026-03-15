@@ -8,6 +8,7 @@
       online-mode = true;
       view-distance = 15;
       white-list = true;
+      server-port = 25566;
     };
     files = {
       "white-list.txt" = {

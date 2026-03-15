@@ -54,6 +54,7 @@
         {
           out-of-your-element = pkgs.callPackage ./pkgs/out-of-your-element { };
           uberbukkit = pkgs.callPackage ./pkgs/uberbukkit { };
+          viaproxy = pkgs.callPackage ./pkgs/viaproxy { };
 
           # NixOS installer for Raspberry Pi 5
           aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;

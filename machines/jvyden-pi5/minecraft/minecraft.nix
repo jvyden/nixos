@@ -3,6 +3,7 @@
   imports = [
     nix-minecraft.nixosModules.minecraft-servers
     ./beta.nix
+    ./viaproxy.nix
   ];
   nixpkgs.overlays = [ nix-minecraft.overlay ];
 

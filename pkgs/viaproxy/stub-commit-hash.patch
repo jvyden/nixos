@@ -1,0 +1,13 @@
+diff --git a/buildSrc/src/main/groovy/base.fill-build-constants.gradle b/buildSrc/src/main/groovy/base.fill-build-constants.gradle
+index 60e6c75..d3a79e7 100644
+--- a/buildSrc/src/main/groovy/base.fill-build-constants.gradle
++++ b/buildSrc/src/main/groovy/base.fill-build-constants.gradle
+@@ -10,7 +10,5 @@ sourceSets.configureEach {
+ }
+ 
+ Provider<String> latestCommitHash() {
+-    return providers.exec {
+-        commandLine = ["git", "rev-parse", "--short", "HEAD"]
+-    }.standardOutput.getAsText().map(String::trim)
++    return providers.provider { "COMMIT" }
+ }
