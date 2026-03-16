@@ -5,7 +5,7 @@
     enable = true;
     package = self.packages.${pkgs.stdenv.hostPlatform.system}.uberbukkit;
     serverProperties = {
-      online-mode = true;
+      online-mode = false;
       view-distance = 15;
       white-list = true;
       server-port = 25566;
