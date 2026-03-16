@@ -1,52 +1,79 @@
-{ lib, pkgs, gradle_9, makeWrapper, stdenv, fetchFromGitHub, ... }:
+# { lib, pkgs, gradle_9, makeWrapper, stdenv, fetchFromGitHub, ... }:
+{
+  lib,
+  pkgs,
+  makeWrapper,
+  stdenv,
+  fetchurl,
+}:
 let
   commitHash = "82f64be84fb66a7645310012093be0c13417e94c";
 in
-stdenv.mkDerivation(finalAttrs: {
+stdenv.mkDerivation (finalAttrs: {
   pname = "viaproxy";
   version = "3.4.9";
 
-  # package depends on git information, can't use fetchFromGitHub which uses a git archive
-  src = fetchFromGitHub {
-    owner = "ViaVersion";
-    repo = "ViaProxy";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-zdbNXSgM2zIVNkxJvnmJkqLR0U9jJNMWu585N4/UDrI=";
+  src = fetchurl {
+    url = "https://github.com/ViaVersion/ViaProxy/releases/download/v${finalAttrs.version}/ViaProxy-${finalAttrs.version}.jar";
+    sha256 = "sha256-ufwzxMinzVPl5l5xmM80+hjDgdjjXU0qa6T/xBVfx1k=";
   };
 
-  patches = [./stub-commit-hash.patch];
+  dontUnpack = true;
 
-  postPatch = ''
-    substituteInPlace buildSrc/src/main/groovy/base.fill-build-constants.gradle \
-      --replace "COMMIT" "${commitHash}"
+  nativeBuildInputs = [ makeWrapper ];
+
+  postInstall = ''
+    makeWrapper ${pkgs.jdk25}/bin/java $out/bin/viaproxy \
+      --add-flags "-jar ${finalAttrs.src}" \
+      --add-flags "cli"
   '';
 
-  nativeBuildInputs = [
-    gradle_9
-    pkgs.git
-    pkgs.jdk17
-    pkgs.jdk25
-    makeWrapper
-  ];
+  # below is an attempt at building with gradle.
+  # can't get it to work. ill just download the binary release for now
 
-  env.JAVA_HOME = pkgs.jdk25;
-  gradleFlags = ["--info" "--no-configuration-cache"];
+  # src = fetchFromGitHub {
+  #   owner = "ViaVersion";
+  #   repo = "ViaProxy";
+  #   tag = "v${finalAttrs.version}";
+  #   hash = "sha256-zdbNXSgM2zIVNkxJvnmJkqLR0U9jJNMWu585N4/UDrI=";
+  # };
 
-  # gradleUpdateTask = "nixDownloadDeps jar";
+  # patches = [ ./stub-commit-hash.patch ];
 
-  # if the package has dependencies, mitmCache must be set
-  mitmCache = gradle_9.fetchDeps {
-    pkg = finalAttrs.finalPackage;
-    data = ./deps.json;
-    silent = false;
-    useBwrap = false;
-  };
+  # postPatch = ''
+  #   substituteInPlace buildSrc/src/main/groovy/base.fill-build-constants.gradle \
+  #     --replace "COMMIT" "${commitHash}"
+  # '';
 
-  # this is required for using mitm-cache on Darwin
-  __darwinAllowLocalNetworking = true;
+  # nativeBuildInputs = [
+  #   gradle_9
+  #   pkgs.git
+  #   pkgs.jdk17
+  #   pkgs.jdk25
+  #   makeWrapper
+  # ];
 
-  meta.sourceProvenance = with lib.sourceTypes; [
-    fromSource
-    binaryBytecode # mitm cache
-  ];
+  # env.JAVA_HOME = pkgs.jdk25;
+  # gradleFlags = [
+  #   "--info"
+  #   "--no-configuration-cache"
+  # ];
+
+  # # gradleUpdateTask = "nixDownloadDeps jar";
+
+  # # if the package has dependencies, mitmCache must be set
+  # mitmCache = gradle_9.fetchDeps {
+  #   pkg = finalAttrs.finalPackage;
+  #   data = ./deps.json;
+  #   silent = false;
+  #   useBwrap = false;
+  # };
+
+  # # this is required for using mitm-cache on Darwin
+  # __darwinAllowLocalNetworking = true;
+
+  # meta.sourceProvenance = with lib.sourceTypes; [
+  #   fromSource
+  #   binaryBytecode # mitm cache
+  # ];
 })

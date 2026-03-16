@@ -1,2 +1,9 @@
 result/
 ooye.db
+
+#viaproxy
+viabedrock/
+via*.yml
+saves.json
+logs/
+jars/
