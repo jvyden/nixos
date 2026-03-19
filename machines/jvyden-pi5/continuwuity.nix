@@ -23,14 +23,14 @@
         port = [ 8008 ];
         allow_announcements_check = true;
 
-        cache_capacity_modifier = 0.5;
+        cache_capacity_modifier = 0.75;
         dns_cache_entries = 8192;
         ip_lookup_strategy = 1;
 
         max_request_size = 104857600;
 
         trusted_servers = [ "matrix.org" ];
-        query_trusted_key_servers_first = true;
+        query_trusted_key_servers_first = false;
         federation_timeout = 120;
 
         allow_registration = false;
