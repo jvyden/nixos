@@ -36,6 +36,14 @@
   };
 
   # Disk setup
+  services.btrfs = {
+    autoScrub = {
+      enable = true;
+      interval = "weekly";
+      fileSystems = ["/"];
+    };
+  };
+
   # try to use noatime when possible
   fileSystems = {
     "/boot/firmware" = {
