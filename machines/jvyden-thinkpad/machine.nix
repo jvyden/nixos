@@ -3,7 +3,7 @@
   imports = [
     ../../modules/common.nix
     ../../modules/common-cli.nix
-    ../../modules/home-ethernet.nix
+    ../../modules/network.nix
     ../../modules/battery.nix
     ../../modules/boot-limine.nix
     ../../modules/common-desktop.nix
@@ -16,12 +16,7 @@
   # Networking setup
   networking = {
     hostName = "jvyden-thinkpad";
-    interfaces.enp0s25.ipv4.addresses = [
-      {
-        address = "10.0.0.135";
-        prefixLength = 24;
-      }
-    ];
+    interfaces.enp0s25.useDHCP = true;
   };
 
   # Disk setup

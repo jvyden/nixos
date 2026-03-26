@@ -5,7 +5,7 @@
     ../../modules/rpi5.nix
     ../../modules/common.nix
     ../../modules/common-cli.nix
-    ../../modules/home-ethernet.nix
+    ../../modules/network.nix
     ./cloudflared.nix
     ./continuwuity.nix
     ./copyparty.nix
@@ -17,6 +17,7 @@
   # Networking setup
   networking = {
     hostName = "jvyden-pi5";
+    defaultGateway = "10.0.0.1";
     interfaces.end0.ipv4.addresses = [
       {
         address = "10.0.0.228";
