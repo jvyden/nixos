@@ -10,6 +10,7 @@
     ../../modules/kde.nix
     ../../modules/workloads/gaming.nix
     ../../modules/workloads/dev.nix
+    ../../modules/workloads/emu.nix
   ];
 
   # Networking setup
