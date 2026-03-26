@@ -23,13 +23,16 @@ let
           hash = "sha256-UoezMIfGxDWdtY0p6Ygm+HFAp1GVH+LQYsSCX6WO9F0=";
         };
         postInstall = (builtins.replaceStrings [ "96 " "192 " " 512" ] [ "" "" "" ] prev.postInstall);
+        nativeBuildInputs = prev.nativeBuildInputs ++ [pkgs.vde2];
       });
     }
   );
 in
 {
+  networking.firewall.allowedUDPPorts = [ 8086 ];
   nixpkgs.overlays = [ _86box_overlay ];
   environment.systemPackages = with pkgs; [
     _86box-with-roms
+    vde2
   ];
 }
