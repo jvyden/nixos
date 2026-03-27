@@ -46,5 +46,7 @@
     mpv
     obs-studio
     obsidian
+    kdePackages.krdc
+    remmina
   ];
 }
