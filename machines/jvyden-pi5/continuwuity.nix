@@ -1,4 +1,4 @@
-{ config, continuwuity, pkgs, ... }:
+{ config, continuwuity, pkgs, lib, ... }:
 
 {
   imports = [
@@ -76,5 +76,10 @@
         };
       };
     };
+  };
+
+  systemd.services.continuwuity.serviceConfig = {
+    Restart = lib.mkForce "always";
+    RuntimeMaxSec = lib.mkForce "4h";
   };
 }

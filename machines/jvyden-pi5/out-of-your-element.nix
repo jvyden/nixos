@@ -20,6 +20,7 @@ in
     serviceConfig = {
       Type = "simple";
       Restart = "always";
+      RuntimeMaxSec = "4h";
 
       ProtectSystem = "strict";
       ProtectHome = true;
