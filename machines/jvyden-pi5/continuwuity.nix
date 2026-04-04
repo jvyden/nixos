@@ -15,7 +15,7 @@
   services.matrix-continuwuity = {
     enable = true;
     package =
-      continuwuity.outputs.packages.${pkgs.stdenv.hostPlatform.system}.continuwuity-all-features-bin;
+      continuwuity.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       global = {
         server_name = "jvyden.xyz";
