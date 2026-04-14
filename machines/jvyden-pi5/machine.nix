@@ -12,6 +12,7 @@
     ./postgres.nix
     ./immich.nix
     ./minecraft/minecraft.nix
+    ./unbound.nix
   ];
 
   # Networking setup

@@ -23,8 +23,8 @@
         port = [ 8008 ];
         allow_announcements_check = true;
 
-        cache_capacity_modifier = 0.75;
-        dns_cache_entries = 8192;
+        cache_capacity_modifier = 0.5;
+        dns_cache_entries = 0;
         ip_lookup_strategy = 1;
 
         max_request_size = 104857600;
@@ -42,6 +42,10 @@
         allow_local_presence = true;
         allow_incoming_presence = true;
         allow_outgoing_presence = true;
+        presence_idle_timeout_s = 180;
+        presence_offline_timeout_s = 900;
+        typing_federation_timeout_s = 15;
+        presence_timeout_remote_users = false;
 
         turn_uris = [
           "turn:jvyden.xyz?transport=udp"
@@ -54,7 +58,7 @@
 
         media_startup_check = true;
 
-        admin_execute = [ "server admin-notice continuwuity has started!" ];
+        admin_execute = [ "server admin-notice continuwuity has (re)started!" ];
         admin_execute_errors_ignore = true;
         admin_room_tag = "m.server_notice";
         admin_room_notices = true;
