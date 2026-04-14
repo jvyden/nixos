@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ../../modules/common.nix
@@ -10,6 +10,22 @@
     ../../modules/kde.nix
     ../../modules/workloads/gaming.nix
   ];
+
+  # Enable hardware sensors.
+  hardware.sensor.iio.enable = true;
+
+  # Add Windows bootloader and other limine tweaks
+  boot.loader.limine = {
+    extraEntries =
+      ''
+      /Windows
+        protocol: efi
+        path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
+      '';
+    maxGenerations = lib.mkForce 2; # limit generations due to limited diskspace on EFI part
+    partitionIndex = 2;
+    efiInstallAsRemovable = false;
+  };
 
   # Networking setup
   networking = {
