@@ -31,6 +31,11 @@ in
         serve-expired = true;
         serve-expired-ttl = 1800; # 30 minutes, in seconds. this is low on purpose to allow hs IP changes to not be a problem for too long.
         serve-expired-client-timeout = 1500; # 1.5 seconds, in milliseconds
+
+        # log some stats for debugging
+        statistics-interval = 120;
+        extended-statistics = true;
+        statistics-inhibit-zero = false;
       };
     };
   };
