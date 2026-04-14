@@ -86,6 +86,11 @@
           specialArgs = inputs;
           modules = [ ./machines/jvyden-thinkpad/machine.nix ];
         };
+        red-nugget = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = inputs;
+          modules = [ ./machines/red-nugget/machine.nix ];
+        }
       };
     };
 }
