@@ -90,7 +90,7 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = [ ./machines/red-nugget/machine.nix ];
-        }
+        };
       };
     };
 }
