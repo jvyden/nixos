@@ -13,6 +13,8 @@
     ../../modules/workloads/emu.nix
   ];
 
+  hardware.enableRedistributableFirmware = true;
+
   # Networking setup
   networking = {
     hostName = "jvyden-thinkpad";
