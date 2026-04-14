@@ -19,6 +19,12 @@
         "ooye.jvyden.xyz" = {
           service = "http://127.0.0.1:6693";
         };
+        "vm.jvyden.xyz" = {
+          service = "http://10.0.0.100:1234";
+        };
+        "vm-gayvm.jvyden.xyz" = {
+          service = "http://10.0.0.100:6004";
+        };
       };
       default = "http_status:404";
     };
