@@ -21,5 +21,8 @@
     lsof
     tmux
     file
+    usbutils
+    pciutils
+    lshw
   ];
 }
