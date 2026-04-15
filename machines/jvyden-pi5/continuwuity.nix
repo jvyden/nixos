@@ -84,6 +84,6 @@
 
   systemd.services.continuwuity.serviceConfig = {
     Restart = lib.mkForce "always";
-    RuntimeMaxSec = lib.mkForce "4h";
+    RuntimeMaxSec = lib.mkForce "24h";
   };
 }
