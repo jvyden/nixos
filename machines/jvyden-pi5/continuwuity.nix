@@ -36,7 +36,7 @@
         allow_registration = false;
         allow_public_room_directory_over_federation = true;
         allow_device_name_federation = true;
-        allow_inbound_profile_lookup_federation_requests = false;
+        allow_inbound_profile_lookup_federation_requests = true;
         allow_unstable_room_versions = true;
 
         allow_local_presence = true;
