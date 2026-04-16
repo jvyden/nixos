@@ -90,5 +90,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.jvyden = ../home/jvyden/user.nix;
+    backupFileExtension = "bak";
   };
 }
