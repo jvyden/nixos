@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, self, ... }:
 {
   imports = [
     ./kde.nix
@@ -48,5 +48,7 @@
     obsidian
     kdePackages.krdc
     remmina
-  ];
+  ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
+    sable-client-electron
+  ]);
 }

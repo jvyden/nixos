@@ -14,5 +14,6 @@
     usbutils
     pciutils
     lshw
+    killall
   ];
 }

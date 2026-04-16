@@ -9,6 +9,8 @@
   electron_40,
   jq,
   makeDesktopItem,
+  copyDesktopItems,
+  imagemagick,
   withTTS ? true,
   withMiddleClickScroll ? false,
   ...
@@ -33,6 +35,12 @@ buildNpmPackage (finalAttrs: {
     ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
   };
 
+  prePatch = ''
+    # workaround for https://github.com/electron/electron/issues/31121
+    sed -i "s#process\.resourcesPath#'$out/opt/Sable-Client-Electron/resources'#g" \
+      main.js
+  '';
+
   # electron builds must be writable
   preBuild = ''
     # Validate electron version matches upstream package.json
@@ -55,6 +63,8 @@ buildNpmPackage (finalAttrs: {
     nodejs
     jq
     makeWrapper
+    copyDesktopItems
+    imagemagick # for icon generation
   ];
 
   buildPhase = ''
@@ -77,9 +87,9 @@ buildNpmPackage (finalAttrs: {
     mkdir -p $out/opt/Sable-Client-Electron
     cp -r dist/*unpacked/resources $out/opt/Sable-Client-Electron/
 
-    for file in build/icon_*x32.png; do
-      file_suffix=''${file//build\/icon_}
-      install -Dm0644 $file $out/share/icons/hicolor/''${file_suffix//x32.png}/apps/sable.png
+    for i in 16 24 48 64 96 128 256 512; do
+      mkdir -p $out/share/icons/hicolor/''${i}x''${i}/apps
+      magick convert -background none -resize ''${i}x''${i} icon.png $out/share/icons/hicolor/''${i}x''${i}/apps/sable.png
     done
   ''
   + lib.optionalString stdenv.hostPlatform.isDarwin ''
@@ -94,6 +104,7 @@ buildNpmPackage (finalAttrs: {
     lib.optionalString stdenv.hostPlatform.isLinux ''
       makeWrapper ${electron}/bin/electron $out/bin/sable-client-electron \
         --add-flags $out/opt/Sable-Client-Electron/resources/app.asar \
+        --set ELECTRON_FORCE_IS_PACKAGED true \
         ${lib.strings.optionalString withTTS ''
           --run 'if [[ "''${NIXOS_SPEECH:-default}" != "False" ]]; then NIXOS_SPEECH=True; else unset NIXOS_SPEECH; fi' \
           --add-flags "\''${NIXOS_SPEECH:+--enable-speech-dispatcher}" \
