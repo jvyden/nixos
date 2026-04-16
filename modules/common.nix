@@ -84,4 +84,11 @@
     dates = "02:00";
     randomizedDelaySec = "5min";
   };
+
+  # home-manager base config
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.jvyden = ../home/jvyden/user.nix;
+  };
 }
