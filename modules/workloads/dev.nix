@@ -7,6 +7,7 @@
     clang
     dotnetCorePackages.sdk_10_0
     nixfmt
+    gdb
     # tools, IDEs, debuggers
     angryipscanner
     vscodium
