@@ -1,8 +1,9 @@
-{ config, agenix, ... }:
+{ config, agenix, home-manager, ... }:
 
 {
   imports = [
     agenix.nixosModules.default
+    home-manager.nixosModules.home-manager
   ];
 
   age.secrets.password = {
