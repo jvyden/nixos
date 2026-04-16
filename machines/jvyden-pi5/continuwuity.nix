@@ -63,6 +63,8 @@
         admin_room_tag = "m.server_notice";
         admin_room_notices = true;
 
+        forbidden_remote_server_names = import ../../secrets/continuwuity-banned-servers.nix;
+
         well_known = {
           client = "https://matrix.jvyden.xyz";
           server = "matrix.jvyden.xyz:443";
