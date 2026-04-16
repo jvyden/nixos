@@ -1,0 +1,3 @@
+[submodule "secrets"]
+	path = secrets
+	url = jvyden-pi5.local:/~/nix-secrets
