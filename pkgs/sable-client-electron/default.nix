@@ -39,6 +39,10 @@ buildNpmPackage (finalAttrs: {
     # workaround for https://github.com/electron/electron/issues/31121
     sed -i "s#process\.resourcesPath#'$out/opt/Sable-Client-Electron/resources'#g" \
       main.js
+
+    # workaround sable using __dirname in the wrong spot for now
+    sed -i "s#__dirname#'$out/opt/Sable-Client-Electron/resources'#g" \
+      main.js
   '';
 
   # electron builds must be writable
@@ -89,7 +93,7 @@ buildNpmPackage (finalAttrs: {
 
     for i in 16 24 48 64 96 128 256 512; do
       mkdir -p $out/share/icons/hicolor/''${i}x''${i}/apps
-      magick convert -background none -resize ''${i}x''${i} icon.png $out/share/icons/hicolor/''${i}x''${i}/apps/sable.png
+      magick icon.png -background none -resize ''${i}x''${i} $out/share/icons/hicolor/''${i}x''${i}/apps/sable.png
     done
   ''
   + lib.optionalString stdenv.hostPlatform.isDarwin ''
