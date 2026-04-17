@@ -3,8 +3,7 @@
     self.submodules = true;
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
-    # continuwuity.url = "git+https://forgejo.ellis.link/continuwuation/continuwuity?ref=main&rev=2c7233812b6838a6942ca57d5304ed843ce2bb05";
-    continuwuity.url = "git+https://forgejo.ellis.link/continuwuation/continuwuity?ref=main&rev=7bbe31adeea8090e2b9b05d37dc943f12ebee004";
+    continuwuity.url = "git+https://forgejo.ellis.link/continuwuation/continuwuity?ref=main&rev=c927bc7b303164fb2d134f50ab2d9231684c6088";
     copyparty.url = "github:9001/copyparty";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     agenix = {
