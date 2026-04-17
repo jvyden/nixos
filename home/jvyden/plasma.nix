@@ -12,6 +12,10 @@
       };
     };
 
+    session = {
+      sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
+    };
+
     kscreenlocker.appearance.wallpaper = config.programs.plasma.workspace.wallpaper;
 
     panels = [
