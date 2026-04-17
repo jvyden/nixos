@@ -1,4 +1,10 @@
-{ config, agenix, home-manager, ... }:
+{
+  config,
+  agenix,
+  home-manager,
+  plasma-manager,
+  ...
+}:
 
 {
   imports = [
@@ -74,7 +80,10 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.jvyden = ../home/jvyden/user.nix;
+    sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+
     backupFileExtension = "bak";
+
+    users.jvyden = ../home/jvyden/user.nix;
   };
 }
