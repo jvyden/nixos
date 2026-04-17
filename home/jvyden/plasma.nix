@@ -5,6 +5,7 @@
     overrideConfig = true;
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
+      wallpaper = ../../assets/wallpapers/bg2.jpg;
       cursor = {
         size = 54;
       };
@@ -79,6 +80,7 @@
           scrollMethod = "twoFingers";
           tapAndDrag = true;
           tapToClick = true;
+          scrollSpeed = 0.3;
         }
       ];
     };
