@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.plasma = {
     enable = true;
@@ -6,10 +6,13 @@
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
       wallpaper = ../../assets/wallpapers/bg2.jpg;
+      wallpaperFillMode = "preserveAspectCrop";
       cursor = {
         size = 54;
       };
     };
+
+    kscreenlocker.appearance.wallpaper = config.programs.plasma.workspace.wallpaper;
 
     panels = [
       {
