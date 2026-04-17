@@ -52,5 +52,39 @@
         ];
       };
     };
+
+    input = {
+      touchpads = [
+        { # red-nugget
+          vendorId = "0002";
+          productId = "0007";
+          name = "SynPS/2 Synaptics TouchPad";
+          enable = true;
+          accelerationProfile = "none";
+          naturalScroll = true;
+          rightClickMethod = "twoFingers";
+          scrollMethod = "twoFingers";
+          tapAndDrag = true;
+          tapToClick = true;
+          scrollSpeed = 0.3;
+        }
+        { # jvyden-thinkpad
+          vendorId = "001d";
+          productId = "06cb";
+          name = "Synaptics tm2964-001";
+          enable = true;
+          accelerationProfile = "none";
+          naturalScroll = true;
+          rightClickMethod = "twoFingers";
+          scrollMethod = "twoFingers";
+          tapAndDrag = true;
+          tapToClick = true;
+        }
+      ];
+    };
+
+    shortcuts = {
+      "services/org.kde.touchpadshortcuts.desktop".DisableTouchpad = [ ]; # the nugget is dumb and requires this.
+    };
   };
 }
