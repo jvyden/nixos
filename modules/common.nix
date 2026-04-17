@@ -69,21 +69,6 @@
 
   # keep us up to date
   services.fwupd.enable = true;
-  system.autoUpgrade = {
-    enable = true;
-    runGarbageCollection = true;
-    # flake = "git+file:///home/jvyden/nixos";
-    # NOTE: when making new machines, ensure root can connect to jvyden@jvyden-pi5.local autonomously
-    flake = "git+ssh://jvyden@jvyden-pi5.local/~/nixos";
-    flags = [
-      "--verbose"
-      "--print-build-logs"
-      "--commit-lock-file"
-      "--accept-flake-config"
-    ];
-    dates = "02:00";
-    randomizedDelaySec = "5min";
-  };
 
   # home-manager base config
   home-manager = {
