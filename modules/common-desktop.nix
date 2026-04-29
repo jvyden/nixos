@@ -45,7 +45,6 @@
     fsearch
     mpv
     obs-studio
-    obsidian
     kdePackages.krdc
     remmina
   ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
