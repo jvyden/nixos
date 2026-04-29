@@ -5,7 +5,6 @@
     ../../modules/common-cli.nix
     ../../modules/network.nix
     ../../modules/hardware/battery.nix
-    ../../modules/hardware/fingerprint.nix
     ../../modules/boot-limine.nix
     ../../modules/common-desktop.nix
     ../../modules/kde.nix
