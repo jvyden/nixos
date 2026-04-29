@@ -1,0 +1,6 @@
+{...}:
+{
+  services.fprintd = {
+    enable = true;
+  };
+}
