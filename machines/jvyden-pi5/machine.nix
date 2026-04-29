@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/rpi5.nix
+    ../../modules/hardware/rpi5.nix
     ../../modules/common.nix
     ../../modules/common-cli.nix
     ../../modules/network.nix

@@ -4,7 +4,7 @@
     ../../modules/common.nix
     ../../modules/common-cli.nix
     ../../modules/network.nix
-    ../../modules/battery.nix
+    ../../modules/hardware/battery.nix
     ../../modules/boot-limine.nix
     ../../modules/common-desktop.nix
     ../../modules/kde.nix
