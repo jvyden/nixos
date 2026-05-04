@@ -47,6 +47,7 @@
     obs-studio
     kdePackages.krdc
     remmina
+    xauth # we primarily prefer wayland but this is useful for X forwarding
   ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
     sable-client-electron
   ]);
