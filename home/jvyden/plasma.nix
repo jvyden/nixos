@@ -5,7 +5,7 @@
     overrideConfig = true;
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
-      wallpaper = ../../assets/wallpapers/bg2.jpg;
+      wallpaper = ../../assets/wallpapers/bg3.jpg;
       wallpaperFillMode = "preserveAspectCrop";
       cursor = {
         size = 54;
