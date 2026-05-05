@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777852249,
-        "narHash": "sha256-XdbGWnFlX4McOEG5NioVsp35Ic6XL/rXnp8as71cu6o=",
+        "lastModified": 1778009629,
+        "narHash": "sha256-nUoQtf4Zq7DRYJrfv904hjrxjAlWVP6a1pNNFKx3FCg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c909892de502b4de9e92838a503c09a9c8ebe4aa",
+        "rev": "00ed86e58bb6979a7921859fd1615d19382eac5c",
         "type": "github"
       },
       "original": {
@@ -288,11 +288,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1777692910,
-        "narHash": "sha256-rPszOFTm7gP9n/JGiFH4SeuEALC8FBJtXu5owvHVjaQ=",
+        "lastModified": 1777952170,
+        "narHash": "sha256-8dQ/DOUvQI8x5i6MZ309/xZLLVfV1CgWbD2+JiQ7Hd4=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "0707737282f65e25ed8e6e73f8767872659b7fb8",
+        "rev": "34a46e4de360c5004ee1866f5e3de78bf5e8b289",
         "type": "github"
       },
       "original": {
@@ -429,11 +429,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1777578337,
-        "narHash": "sha256-Ad49moKWeXtKBJNy2ebiTQUEgdLyvGmTeykAQ9xM+Z4=",
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "15f4ee454b1dce334612fa6843b3e05cf546efab",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
         "type": "github"
       },
       "original": {
@@ -487,17 +487,17 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1777940057,
-        "narHash": "sha256-zF9wqYwZ4q2WvBRWWfrf/SoYs1ZJyPj8M7NISkvgQ5s=",
-        "ref": "refs/heads/master",
-        "rev": "bd887d7e386584af508737a58f255d84ea828a15",
-        "revCount": 10,
-        "type": "git",
-        "url": "file:///work/nix-resonite"
+        "lastModified": 1778013265,
+        "narHash": "sha256-nGcbrb4qqbK9yVn67Mwp/q5ZD3thMDonxw+xAkufsg0=",
+        "owner": "jvyden",
+        "repo": "nix-resonite",
+        "rev": "2a955f08db581c03255c2b2b52a489d5ab946039",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///work/nix-resonite"
+        "owner": "jvyden",
+        "repo": "nix-resonite",
+        "type": "github"
       }
     },
     "root": {

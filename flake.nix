@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    resonite.url = "git+file:///work/nix-resonite";
+    resonite.url = "github:jvyden/nix-resonite";
   };
 
   nixConfig = {
