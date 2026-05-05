@@ -19,6 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    resonite.url = "git+file:///work/nix-resonite";
   };
 
   nixConfig = {
@@ -43,6 +44,7 @@
       agenix,
       home-manager,
       plasma-manager,
+      resonite,
       ...
     }@inputs:
     let

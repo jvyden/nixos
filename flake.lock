@@ -443,6 +443,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1777578337,
+        "narHash": "sha256-Ad49moKWeXtKBJNy2ebiTQUEgdLyvGmTeykAQ9xM+Z4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "15f4ee454b1dce334612fa6843b3e05cf546efab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -466,6 +482,24 @@
         "type": "github"
       }
     },
+    "resonite": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1777940057,
+        "narHash": "sha256-zF9wqYwZ4q2WvBRWWfrf/SoYs1ZJyPj8M7NISkvgQ5s=",
+        "ref": "refs/heads/master",
+        "rev": "bd887d7e386584af508737a58f255d84ea828a15",
+        "revCount": 10,
+        "type": "git",
+        "url": "file:///work/nix-resonite"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///work/nix-resonite"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -475,7 +509,8 @@
         "nix-minecraft": "nix-minecraft",
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_5",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "resonite": "resonite"
       }
     },
     "rust-analyzer-src": {

@@ -14,4 +14,5 @@ in {
   "secrets/continuwuity-turn-secret.age".publicKeys = users ++ [jvyden-pi5];
   "secrets/copyparty/jvyden-password.age".publicKeys = users ++ [jvyden-pi5];
   "secrets/copyparty/localguest-password.age".publicKeys = users ++ [jvyden-pi5];
+  "secrets/resonite/credentials.age".publicKeys = users ++ [jvyden-thinkpad jvyden-pi5];
 }

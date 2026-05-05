@@ -12,6 +12,7 @@
     ../../modules/workloads/gaming.nix
     ../../modules/workloads/dev.nix
     ../../modules/workloads/emu.nix
+    ./resonite.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
