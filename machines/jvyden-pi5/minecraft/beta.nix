@@ -2,7 +2,7 @@
 
 {
   services.minecraft-servers.servers.beta = {
-    enable = true;
+    enable = false;
     package = self.packages.${pkgs.stdenv.hostPlatform.system}.uberbukkit;
     serverProperties = {
       online-mode = false;

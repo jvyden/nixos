@@ -33,7 +33,7 @@ in
         serve-expired-client-timeout = 1500; # 1.5 seconds, in milliseconds
 
         # log some stats for debugging
-        statistics-interval = 120;
+        statistics-interval = 600;
         extended-statistics = true;
         statistics-inhibit-zero = false;
       };
