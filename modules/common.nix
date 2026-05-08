@@ -20,7 +20,6 @@
   time.timeZone = "America/New_York";
 
   boot.tmp.useTmpfs = true;
-  nix.settings.trusted-users = [ "jvyden" ];
 
   users.mutableUsers = false;
 
@@ -54,6 +53,7 @@
   #nix config
   nix = {
     settings = {
+      trusted-users = [ "jvyden" ];
       experimental-features = [
         "nix-command"
         "flakes"
