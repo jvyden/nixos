@@ -5,7 +5,7 @@
     overrideConfig = true;
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
-      wallpaper = ../../assets/wallpapers/bg3.jpg;
+      wallpaper = "${../../assets/wallpapers/bg3.jpg}";
       wallpaperFillMode = "preserveAspectCrop";
       cursor = {
         size = 48;
@@ -95,6 +95,15 @@
 
     shortcuts = {
       "services/org.kde.touchpadshortcuts.desktop".DisableTouchpad = [ ]; # the nugget is dumb and requires this.
+    };
+
+    configFile = {
+      # plasma-manager seems to have issues applying the wallpaper properly, force apply this here
+      plasmarc.Wallpapers.usersWallpapers = config.programs.plasma.workspace.wallpaper;
+      breezerc.Windeco = {
+        DrawBackgroundGradient = true;
+        TitleAlignment = "AlignLeft";
+      };
     };
   };
 }

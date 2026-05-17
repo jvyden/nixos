@@ -2,7 +2,7 @@
 {
   programs.konsole = {
     enable = true;
-    defaultProfile = "custom";
+    defaultProfile = "Custom";
 
     customColorSchemes = {
       linuxTransparent = ./LinuxTransparent.colorscheme;
