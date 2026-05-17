@@ -20,6 +20,10 @@
       inputs.home-manager.follows = "home-manager";
     };
     resonite.url = "github:jvyden/nix-resonite";
+    kwin-effects-better-blur-dx = {
+      url = "github:xarblu/kwin-effects-better-blur-dx";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -45,6 +49,7 @@
       home-manager,
       plasma-manager,
       resonite,
+      kwin-effects-better-blur-dx,
       ...
     }@inputs:
     let

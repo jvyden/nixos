@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ kwin-effects-better-blur-dx, pkgs, lib, ... }:
 {
   services.auto-cpufreq.enable = lib.mkForce false;
   services.desktopManager.plasma6.enable = true;
@@ -8,4 +8,8 @@
     [Greeter][Wallpaper][org.kde.image][General]
     Image=file://${../assets/wallpapers/bg3.jpg}
   '';
+
+  environment.systemPackages = [
+    kwin-effects-better-blur-dx.packages.${pkgs.system}.default # Wayland
+  ];
 }

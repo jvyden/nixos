@@ -105,6 +105,29 @@
         DrawBackgroundGradient = true;
         TitleAlignment = "AlignLeft";
       };
+
+      kwinrc = {
+        Plugins = {
+          better_blur_dxEnabled = true;
+          blurEnabled = false;
+        };
+        Effect-better-blur-dx = {
+          BlurDecorations = true;
+          BlurDocks = true;
+          BlurMenus = true;
+          BlurStrength = 2;
+          Brightness = 150;
+          CornerRadius = 25;
+          NoiseStrength = 0;
+          RefractionMode = 1;
+          RefractionNormalPow = 5;
+          RefractionRGBFringing = 30;
+          RefractionStrength = 2;
+          RefractionTextureRepeatMode = 1;
+          Saturation = 125;
+          WindowClasses = "org.kde.dolphin";
+        };
+      };
     };
   };
 
