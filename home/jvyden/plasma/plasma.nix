@@ -25,17 +25,18 @@
         screen = "all";
         opacity = "translucent";
         floating = true;
-        height = 35;
+        height = 28;
         widgets = [
           "org.kde.plasma.kickoff"
           "org.kde.plasma.pager"
           {
             iconTasks = {
               launchers = [
-                "applications:org.kde.dolphin.desktop"
-                "applications:org.kde.konsole.desktop"
+                "applications:io.github.cboxdoerfer.FSearch.desktop"
                 "applications:firefox.desktop"
                 "applications:sable-client-electron.desktop"
+                "applications:org.kde.dolphin.desktop"
+                "applications:org.keepassxc.KeePassXC.desktop"
               ];
             };
           }
@@ -47,7 +48,6 @@
               time.format = "12h";
             };
           }
-          "org.kde.plasma.showdesktop"
         ];
       }
     ];
