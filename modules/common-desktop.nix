@@ -51,4 +51,14 @@
   ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
     sable-client-electron
   ]);
+
+  fonts = {
+    enableDefaultPackages = true;
+
+    packages = with pkgs; [
+      ibm-plex
+    ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
+      more-and-less-perfect-dos-vga
+    ]);
+  };
 }

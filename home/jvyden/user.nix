@@ -5,6 +5,7 @@
   imports = [
     ./cli.nix
     ./plasma.nix
+    ./zed.nix
   ];
 
   assertions = lib.mkForce [];

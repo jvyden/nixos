@@ -10,7 +10,7 @@
     gdb
     # tools, IDEs, debuggers
     angryipscanner
-    vscodium
+    zed-editor
     jetbrains.rider
     avalonia-ilspy
     imhex

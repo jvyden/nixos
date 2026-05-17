@@ -70,6 +70,7 @@
           uberbukkit = pkgs.callPackage ./pkgs/uberbukkit { };
           viaproxy = pkgs.callPackage ./pkgs/viaproxy { };
           sable-client-electron = pkgs.callPackage ./pkgs/sable-client-electron { };
+          more-and-less-perfect-dos-vga = pkgs.callPackage ./pkgs/more-and-less-perfect-dos-vga { };
 
           # NixOS installer for Raspberry Pi 5
           aarch64-linux.default = nixos-raspberrypi.installerImages.rpi5;
