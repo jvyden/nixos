@@ -4,7 +4,7 @@
   programs.bash.enable = true;
   imports = [
     ./cli.nix
-    ./plasma.nix
+    ./plasma/plasma.nix
     ./zed.nix
     ./konsole/konsole.nix
   ];

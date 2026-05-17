@@ -5,7 +5,8 @@
     overrideConfig = true;
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
-      wallpaper = "${../../assets/wallpapers/bg3.jpg}";
+      colorScheme = "GenomeUDCharoite";
+      wallpaper = "${../../../assets/wallpapers/bg3.jpg}";
       wallpaperFillMode = "preserveAspectCrop";
       cursor = {
         size = 48;
@@ -106,4 +107,6 @@
       };
     };
   };
+
+  xdg.dataFile."color-schemes/GenomeUDCharoite.colors".source = ./GenomeUDCharoite.colors;
 }
