@@ -3,6 +3,7 @@
   imports = [
     ../../modules/common.nix
     ../../modules/common-cli.nix
+    ../../modules/home.nix
     ../../modules/network.nix
     ../../modules/hardware/battery.nix
     ../../modules/hardware/fingerprint.nix

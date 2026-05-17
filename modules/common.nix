@@ -1,15 +1,12 @@
 {
   config,
   agenix,
-  home-manager,
-  plasma-manager,
   ...
 }:
 
 {
   imports = [
     agenix.nixosModules.default
-    home-manager.nixosModules.home-manager
   ];
 
   age.secrets.password = {
@@ -75,15 +72,4 @@
 
   # keep us up to date
   services.fwupd.enable = true;
-
-  # home-manager base config
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-
-    backupFileExtension = "bak";
-
-    users.jvyden = ../home/jvyden/user.nix;
-  };
 }

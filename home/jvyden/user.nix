@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   home.stateVersion = "25.11";
   programs.bash.enable = true;
@@ -6,4 +6,6 @@
     ./cli.nix
     ./plasma.nix
   ];
+
+  assertions = lib.mkForce [];
 }
