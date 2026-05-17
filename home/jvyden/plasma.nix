@@ -8,7 +8,7 @@
       wallpaper = ../../assets/wallpapers/bg3.jpg;
       wallpaperFillMode = "preserveAspectCrop";
       cursor = {
-        size = 54;
+        size = 48;
       };
     };
 
