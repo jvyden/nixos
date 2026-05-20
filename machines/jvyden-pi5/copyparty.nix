@@ -48,10 +48,15 @@
       e2dsa = true;
       e2ts = true;
       magic = true;
-      ipu = "10.0.0.0/24=localguest";
-      # ipu = "10.1.0.0/24=localguest"; // TODO: report that I can't set multiple ipu rules
-      # hist = "/var/lib/copyparty/hist";
+      site = "https://files.jvyden.xyz";
+      no-robots = true;
+      nosubtle = 2;
     };
+
+    globalExtraConfig = ''
+      ipu: 10.0.0.0/24=localguest
+      ipu: 10.1.0.0/24=localguest
+    '';
 
     accounts = {
       jvyden.passwordFile = config.age.secrets."copyparty-jvyden-password".path;
