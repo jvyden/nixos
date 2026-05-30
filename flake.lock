@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779726696,
-        "narHash": "sha256-/p37CB5n6Wpw250b0Lq0CYwNq2D8uGKzDoBulyLcQqA=",
+        "lastModified": 1780099287,
+        "narHash": "sha256-efIPwVGtIWIjWcznhaop6XN6HxnOL8800hF6CBNvlqQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1a95e2efb477959b70b4a14c51035975c0481df6",
+        "rev": "7d8127d308c3fb9664f7e643eec944be74ebb37d",
         "type": "github"
       },
       "original": {
@@ -289,11 +289,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1779443026,
-        "narHash": "sha256-esct6BZf3VYJUh7ObP6C/zCpMqBInf1szFGlOf/2rrk=",
+        "lastModified": 1780081332,
+        "narHash": "sha256-ETNcOG3e9Sn0tmZajkUwBm5ffrtL+ET5cswJEMqmklg=",
         "owner": "xarblu",
         "repo": "kwin-effects-better-blur-dx",
-        "rev": "52aa6d7a563d083f8276cf9ec23e0b8d8a468728",
+        "rev": "3175c1728ac855d54d7057de24508144bc42830b",
         "type": "github"
       },
       "original": {
@@ -309,11 +309,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1779768841,
-        "narHash": "sha256-lzDWYWg0s4Vvb7lJMdM7ySEHDuSOY8fXMUAXl2ReiAo=",
+        "lastModified": 1780113881,
+        "narHash": "sha256-AMOOt682Odr4GZwCwZ08/Q/21/Sh3DxfmOAoiQbTKhk=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "8996e4e811210fc7b51ead34a8c0ae5ba8df8eef",
+        "rev": "d9bd57f218cda7d6aac4b52546240da0df76a1f9",
         "type": "github"
       },
       "original": {
