@@ -2,13 +2,10 @@
 {
   imports = [
     ../../modules/common.nix
-    ../../modules/common-cli.nix
     ../../modules/home.nix
-    ../../modules/network.nix
     ../../modules/hardware/battery.nix
     ../../modules/boot-limine.nix
-    ../../modules/common-desktop.nix
-    ../../modules/kde.nix
+    ../../modules/desktop/common.nix
     ../../modules/workloads/gaming.nix
   ];
 

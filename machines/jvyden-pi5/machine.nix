@@ -4,8 +4,6 @@
   imports = [
     ../../modules/hardware/rpi5.nix
     ../../modules/common.nix
-    ../../modules/common-cli.nix
-    ../../modules/network.nix
     ./cloudflared.nix
     ./continuwuity.nix
     ./copyparty.nix

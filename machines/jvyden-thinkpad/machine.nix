@@ -2,21 +2,18 @@
 {
   imports = [
     ../../modules/common.nix
-    ../../modules/common-cli.nix
     ../../modules/home.nix
-    ../../modules/network.nix
     ../../modules/hardware/battery.nix
     ../../modules/hardware/fingerprint.nix
     ../../modules/boot-limine.nix
-    ../../modules/common-desktop.nix
-    ../../modules/kde.nix
+    ../../modules/desktop/common.nix
     ../../modules/workloads/gaming.nix
     ../../modules/workloads/dev.nix
     ../../modules/workloads/emu.nix
     ./resonite.nix
   ];
 
-  hardware.enableRedistributableFirmware = true;
+  hardware.enableRedistributableFirmware = true; # for wifi chip :3
 
   # Networking setup
   networking = {

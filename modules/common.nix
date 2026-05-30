@@ -1,6 +1,7 @@
 {
   config,
   agenix,
+  pkgs,
   ...
 }:
 
@@ -35,7 +36,7 @@
   security.polkit.enable = true;
   security.sudo.enable = true;
 
-  # mdns
+  # mdns and other network discovery stuff
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -46,8 +47,9 @@
       workstation = true;
     };
   };
+  services.lldpd.enable = true;
 
-  #nix config
+  # nix config
   nix = {
     settings = {
       trusted-users = [ "jvyden" ];
@@ -72,4 +74,34 @@
 
   # keep us up to date
   services.fwupd.enable = true;
+
+  # networking
+  networking = {
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+    firewall = {
+      enable = true;
+      allowPing = true;
+      rejectPackets = true;
+    };
+  };
+
+  # common CLI programs
+  environment.systemPackages = with pkgs; [
+    tree
+    htop
+    btop
+    fastfetch
+    nano
+    agenix-cli
+    lsof
+    tmux
+    file
+    usbutils
+    pciutils
+    lshw
+    killall
+  ];
 }
