@@ -6,10 +6,10 @@
 
   environment.etc."plasmalogin.conf.d/98-bg.conf".text = ''
     [Greeter][Wallpaper][org.kde.image][General]
-    Image=file://${../assets/wallpapers/bg3.jpg}
+    Image=file://${../../assets/wallpapers/bg3.jpg}
   '';
 
   environment.systemPackages = [
-    kwin-effects-better-blur-dx.packages.${pkgs.system}.default # Wayland
+    kwin-effects-better-blur-dx.packages.${pkgs.stdenv.hostPlatform.system}.default # Wayland
   ];
 }
