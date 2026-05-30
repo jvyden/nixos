@@ -11,6 +11,7 @@
     ./immich.nix
     ./minecraft/minecraft.nix
     ./unbound.nix
+    ./wifi-ap.nix
   ];
 
   # Networking setup

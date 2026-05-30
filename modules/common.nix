@@ -103,5 +103,6 @@
     pciutils
     lshw
     killall
+    git
   ];
 }
