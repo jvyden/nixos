@@ -12,6 +12,7 @@
     ./minecraft/minecraft.nix
     ./unbound.nix
     ./wifi-ap.nix
+    ./proxy.nix
   ];
 
   # Networking setup

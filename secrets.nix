@@ -16,4 +16,6 @@ in {
   "secrets/copyparty/localguest-password.age".publicKeys = users ++ [jvyden-pi5];
   "secrets/resonite/credentials.age".publicKeys = users ++ [jvyden-thinkpad jvyden-pi5];
   "secrets/wifi-ap-password.age".publicKeys = [jvyden] ++ [jvyden-pi5];
+  "secrets/vpstunnel-key-private.age".publicKeys = [jvyden] ++ [jvyden-pi5];
+  "secrets/vpstunnel-key-pub.age".publicKeys = [jvyden] ++ [jvyden-pi5];
 }

@@ -25,7 +25,7 @@
 
         cache_capacity_modifier = 0.5;
         dns_cache_entries = 0;
-        ip_lookup_strategy = 1;
+        ip_lookup_strategy = 5;
 
         max_request_size = 104857600;
 
@@ -79,6 +79,12 @@
               livekit_service_url = "https://livekit.jvyden.xyz";
             }
           ];
+        };
+
+        proxy = {
+          global = {
+            url = "socks5://localhost:1080";
+          };
         };
       };
     };
