@@ -50,7 +50,7 @@ in
     };
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.openssh}/bin/ssh -v -D 1080 -C -N -i ${config.age.secrets."vpstunnel-key-private".path} vpstunnel@jvyden.xyz";
+      ExecStart = "${pkgs.openssh}/bin/ssh -D 1080 -R localhost:8008:localhost:8008 -C -N -i ${config.age.secrets."vpstunnel-key-private".path} vpstunnel@jvyden.xyz";
       Restart = "always";
       RestartSec = 5;
 
