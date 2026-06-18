@@ -8,8 +8,8 @@
     ../../modules/boot-limine.nix
     ../../modules/desktop/common.nix
     ../../modules/workloads/gaming.nix
-    ../../modules/workloads/dev.nix
     ../../modules/workloads/emu.nix
+    ../../modules/workloads/distrobox.nix
     ./resonite.nix
   ];
 

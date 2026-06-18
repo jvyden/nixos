@@ -32,7 +32,13 @@
     ];
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      X11Forwarding = true;
+    };
+  };
+  programs.ssh.setXAuthLocation = true;
   security.polkit.enable = true;
   security.sudo.enable = true;
 
