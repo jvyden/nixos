@@ -19,6 +19,9 @@
         "ooye.jvyden.xyz" = {
           service = "http://127.0.0.1:6693";
         };
+        "fmd.jvyden.xyz" = {
+          service = "http://127.0.0.1:8004";
+        };
       };
       default = "http_status:404";
     };

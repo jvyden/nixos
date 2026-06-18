@@ -18,4 +18,5 @@ in {
   "secrets/wifi-ap-password.age".publicKeys = [jvyden] ++ [jvyden-pi5];
   "secrets/vpstunnel-key-private.age".publicKeys = [jvyden] ++ [jvyden-pi5];
   "secrets/vpstunnel-key-pub.age".publicKeys = [jvyden] ++ [jvyden-pi5];
+  "secrets/fmd-env.age".publicKeys = [jvyden] ++ [jvyden-pi5];
 }

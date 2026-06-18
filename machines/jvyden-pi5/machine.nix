@@ -13,6 +13,7 @@
     ./unbound.nix
     ./wifi-ap.nix
     ./proxy.nix
+    ./fmd.nix
   ];
 
   # Networking setup
