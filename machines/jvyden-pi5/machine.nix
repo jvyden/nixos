@@ -14,6 +14,7 @@
     ./wifi-ap.nix
     ./proxy.nix
     ./fmd.nix
+    ./ntfy.nix
   ];
 
   # Networking setup

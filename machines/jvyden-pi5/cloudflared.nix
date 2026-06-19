@@ -22,6 +22,9 @@
         "fmd.jvyden.xyz" = {
           service = "http://127.0.0.1:8004";
         };
+        "push.jvyden.xyz" = {
+          service = "http://127.0.0.1:2586";
+        };
       };
       default = "http_status:404";
     };
