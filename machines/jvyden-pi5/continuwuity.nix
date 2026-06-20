@@ -47,6 +47,8 @@
         typing_federation_timeout_s = 15;
         presence_timeout_remote_users = false;
 
+        deprioritize_joins_through_servers = [ "matrix.org" ];
+
         turn_uris = [
           "turn:jvyden.xyz?transport=udp"
           "turn:jvyden.xyz?transport=tcp"
@@ -64,6 +66,12 @@
         admin_room_notices = true;
 
         forbidden_remote_server_names = import ../../secrets/continuwuity-banned-servers.nix;
+
+        url_preview_explicit_allowlist = [ "*" ];
+        url_preview_max_spider_size = 1024 * 1024 * 25;
+        url_preview_timeout = 120;
+        url_preview_allow_audio_video = true;
+        url_preview_check_root_domain = true;
 
         well_known = {
           client = "https://matrix.jvyden.xyz";
