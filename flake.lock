@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781810163,
-        "narHash": "sha256-dk8lIk0UnO8GD3e7e3HM1vSYXpbEDmhy67w7KztfdCg=",
+        "lastModified": 1781988859,
+        "narHash": "sha256-y9Ew0HzTbEywQJu5I2TGRQ+4KZyO9c19BQWbDJptxhU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c8f0b8ed441c95bfeaf33555e7631044bb09f384",
+        "rev": "61157d3c01f9790e53b9c98c343a0603d36ea8f5",
         "type": "github"
       },
       "original": {
@@ -289,11 +289,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1781711272,
-        "narHash": "sha256-JPVqiB/P+z43WvyvTZLc8POF0IFwfacXEmowLQJCtOA=",
+        "lastModified": 1781950003,
+        "narHash": "sha256-X2WYqstM1r7/7Z0Y3Yk5to2lhZmhe4dqzMBS9azcXH4=",
         "owner": "xarblu",
         "repo": "kwin-effects-better-blur-dx",
-        "rev": "708cb7307203834088e7507afeb439e407bfbb85",
+        "rev": "e70de64ba562aedbc64d1988b7d7d0036d9b4955",
         "type": "github"
       },
       "original": {
