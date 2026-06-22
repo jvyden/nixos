@@ -68,6 +68,7 @@
         forbidden_remote_server_names = import ../../secrets/continuwuity-banned-servers.nix;
 
         url_preview_domain_explicit_allowlist = [ "*" ];
+        url_preview_url_explicit_allowlist = [ "*" ];
         url_preview_max_spider_size = 1024 * 1024 * 25;
         url_preview_timeout = 120;
         url_preview_allow_audio_video = true;
