@@ -25,7 +25,7 @@
 
         cache_capacity_modifier = 0.5;
         dns_cache_entries = 0;
-        ip_lookup_strategy = 5;
+        ip_lookup_strategy = 4;
 
         max_request_size = 104857600;
 
@@ -73,6 +73,7 @@
         url_preview_timeout = 120;
         url_preview_allow_audio_video = true;
         url_preview_check_root_domain = true;
+        url_preview_bound_interface = "wg0";
 
         well_known = {
           client = "https://matrix.jvyden.xyz";
@@ -82,6 +83,7 @@
           support_mxid = "@jvyden:jvyden.xyz";
           support_role = "m.role.admin";
 
+          # INVESTIGATE: is this the deprecated one?
           rtc_focus_server_urls = [
             {
               type = "livekit";
@@ -89,18 +91,17 @@
             }
           ];
         };
-
-        proxy = {
-          global = {
-            url = "socks5://localhost:1080";
-          };
-        };
       };
     };
   };
 
+  # allow continuwuity traffic over wireguard
+  networking.firewall.interfaces."wg0".allowedTCPPorts = [ 8008 ];
+
+  # auto restart to clear up any cache issues that build up naturally
+  # seems to have gone away since moving to uncache but it can't hurt.
   systemd.services.continuwuity.serviceConfig = {
     Restart = lib.mkForce "always";
-    RuntimeMaxSec = lib.mkForce "24h";
+    RuntimeMaxSec = lib.mkForce "72h";
   };
 }

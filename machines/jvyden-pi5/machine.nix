@@ -12,7 +12,7 @@
     ./minecraft/minecraft.nix
     ./unbound.nix
     ./wifi-ap.nix
-    ./proxy.nix
+    ./xyztunnel.nix
     ./fmd.nix
     ./ntfy.nix
   ];
