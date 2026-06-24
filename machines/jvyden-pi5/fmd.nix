@@ -10,6 +10,8 @@
     group = "fmd-server";
   };
 
+  networking.firewall.interfaces."wg0".allowedTCPPorts = [ 8004 ];
+
   users.users.fmd-server = {
     isSystemUser = true;
     group = "fmd-server";

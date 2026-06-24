@@ -5,6 +5,8 @@ let
   registrationFile = "${dataDir}/registration.yaml";
 in
 {
+  networking.firewall.interfaces."wg0".allowedTCPPorts = [ 6693 ];
+
   systemd.services.out-of-your-element = {
     wantedBy = [ "multi-user.target" ];
     description = "Matrix-Discord bridge with modern features.";

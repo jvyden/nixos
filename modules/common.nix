@@ -110,5 +110,6 @@
     lshw
     killall
     git
+    net-tools
   ];
 }

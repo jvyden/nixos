@@ -24,8 +24,6 @@
           # TODO: obscure pubkey and rotate
           publicKey = "nD5TtvhI6sW/XfYT0JnF4EUDT4E555gYn4sGt9hD81I=";
           allowedIPs = [
-            # "fd31:bf08:57cb::1/64"
-            # "192.168.1.1/24"
             "0.0.0.0/0"
             "::/0"
           ];
