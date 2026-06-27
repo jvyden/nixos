@@ -1,5 +1,4 @@
 {
-  lib,
   buildNpmPackage,
   makeWrapper,
   nodejs,
@@ -8,15 +7,15 @@
 
 buildNpmPackage rec {
   pname = "out-of-your-element";
-  version = "3.5.1";
+  version = "3.6.0";
 
-  src = builtins.fetchGit {
+  src = fetchGit {
     url = "https://gitdab.com/cadence/out-of-your-element/";
-    rev = "4698835549def91b4546f977cc7aad404b610668";
+    rev = "b5768697644ef64717641693e20fc730604fa7b6";
     ref = "v${version}";
   };
 
-  npmDepsHash = "sha256-EYxJi6ObJQOLyiJq4C3mV6I62ns9l64ZHcdoQxmN5Ao=";
+  npmDepsHash = "sha256-h1mmE0/+Y7SBwnI0vaYvV+KqRDJGzwJvDUOkigzHcOY=";
   dontNpmBuild = true;
 
   nativeBuildInputs = [ makeWrapper ];
