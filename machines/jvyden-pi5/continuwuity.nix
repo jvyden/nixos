@@ -82,9 +82,10 @@
           support_email = "jvyden@jvyden.xyz";
           support_mxid = "@jvyden:jvyden.xyz";
           support_role = "m.role.admin";
+        };
 
-          # INVESTIGATE: is this the deprecated one?
-          rtc_focus_server_urls = [
+        matrix_rtc = {
+          foci = [
             {
               type = "livekit";
               livekit_service_url = "https://livekit.jvyden.xyz";
