@@ -76,5 +76,21 @@
         "compress=zstd:7"
       ];
     };
+    "/work" = {
+      device = "/dev/disk/by-uuid/84797aba-67e8-48d0-9e0c-774ac0142582";
+      fsType = "btrfs";
+      options = [
+        "subvol=work"
+        "compress=zstd:7"
+      ];
+    };
+    "/data" = {
+      device = "/dev/disk/by-uuid/84797aba-67e8-48d0-9e0c-774ac0142582";
+      fsType = "btrfs";
+      options = [
+        "subvol=data"
+        "compress=zstd:7"
+      ];
+    };
   };
 }
