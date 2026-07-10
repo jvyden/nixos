@@ -35,6 +35,7 @@
     ];
     extra-platforms = [
       "aarch64-linux"
+      "i686-linux"
     ];
   };
 
@@ -110,6 +111,11 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = [ ./machines/red-nugget/machine.nix ];
+        };
+        the-overcooler = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = inputs;
+          modules = [ ./machines/the-overcooler/machine.nix ];
         };
       };
     };

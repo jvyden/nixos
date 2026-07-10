@@ -16,4 +16,7 @@
     imhex
     gdb
   ];
+
+  virtualisation.docker.enable = true;
+  users.users.jvyden.extraGroups = ["docker"];
 }

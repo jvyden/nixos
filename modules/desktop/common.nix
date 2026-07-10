@@ -48,6 +48,8 @@
     kdePackages.krdc
     remmina
     xauth # we primarily prefer wayland but this is useful for X forwarding
+    cmus
+    copyparty # for partyfuse utility
   ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
     sable-client-electron
   ]);
