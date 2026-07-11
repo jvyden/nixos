@@ -1,4 +1,9 @@
-{ pkgs, self, ... }:
+{
+  pkgs,
+  self,
+  config,
+  ...
+}:
 {
   imports = [
     ./kde.nix
@@ -13,6 +18,7 @@
       enable = true;
       dns = "none";
       wifi.powersave = true;
+      insertNameservers = config.networking.nameservers;
     };
     useDHCP = false;
     dhcpcd.enable = false;
@@ -34,33 +40,41 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    firefox
-    pavucontrol
-    keepassxc
-    vulkan-tools
-    qpwgraph
-    btrfs-assistant
-    kdePackages.filelight
-    fsearch
-    mpv
-    obs-studio
-    kdePackages.krdc
-    remmina
-    xauth # we primarily prefer wayland but this is useful for X forwarding
-    cmus
-    copyparty # for partyfuse utility
-  ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
-    sable-client-electron
-  ]);
+  environment.systemPackages =
+    with pkgs;
+    [
+      firefox
+      pavucontrol
+      keepassxc
+      vulkan-tools
+      qpwgraph
+      btrfs-assistant
+      kdePackages.filelight
+      fsearch
+      mpv
+      obs-studio
+      kdePackages.krdc
+      remmina
+      xauth # we primarily prefer wayland but this is useful for X forwarding
+      cmus
+      copyparty # for partyfuse utility
+      mesa-demos
+      thunderbird
+    ]
+    ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
+      sable-client-electron
+    ]);
 
   fonts = {
     enableDefaultPackages = true;
 
-    packages = with pkgs; [
-      ibm-plex
-    ] ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
-      more-and-less-perfect-dos-vga
-    ]);
+    packages =
+      with pkgs;
+      [
+        ibm-plex
+      ]
+      ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
+        more-and-less-perfect-dos-vga
+      ]);
   };
 }

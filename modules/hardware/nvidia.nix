@@ -16,4 +16,6 @@
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
   ];
+
+  services.lact.enable = true;
 }
