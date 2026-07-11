@@ -11,6 +11,7 @@
     ../../modules/workloads/distrobox.nix
     ../../modules/workloads/dev.nix
     ../../modules/workloads/vr.nix
+    ./kernel.nix
   ];
 
   hardware.enableRedistributableFirmware = true; # for wifi chip :3
