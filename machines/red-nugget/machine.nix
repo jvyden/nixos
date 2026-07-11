@@ -4,6 +4,7 @@
     ../../modules/common.nix
     ../../modules/home.nix
     ../../modules/hardware/battery.nix
+    ../../modules/hardware/bluetooth.nix
     ../../modules/boot-limine.nix
     ../../modules/desktop/common.nix
     ../../modules/workloads/gaming.nix
@@ -14,12 +15,11 @@
 
   # Add Windows bootloader and other limine tweaks
   boot.loader.limine = {
-    extraEntries =
-      ''
+    extraEntries = ''
       /Windows
         protocol: efi
         path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
-      '';
+    '';
     maxGenerations = lib.mkForce 2; # limit generations due to limited diskspace on EFI part
     partitionIndex = 2;
     efiInstallAsRemovable = false;

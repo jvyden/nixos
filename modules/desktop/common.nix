@@ -24,6 +24,7 @@
     dhcpcd.enable = false;
   };
 
+  services.upower.enable = true;
   services.pipewire.enable = true;
   xdg.portal = {
     enable = true;

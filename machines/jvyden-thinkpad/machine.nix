@@ -5,6 +5,7 @@
     ../../modules/home.nix
     ../../modules/hardware/battery.nix
     ../../modules/hardware/fingerprint.nix
+    ../../modules/hardware/bluetooth.nix
     ../../modules/boot-limine.nix
     ../../modules/desktop/common.nix
     ../../modules/workloads/gaming.nix

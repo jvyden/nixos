@@ -5,6 +5,7 @@
     ../../modules/home.nix
     ../../modules/boot-limine.nix
     ../../modules/hardware/nvidia.nix
+    ../../modules/hardware/bluetooth.nix
     ../../modules/desktop/common.nix
     ../../modules/workloads/gaming.nix
     ../../modules/workloads/emu.nix
