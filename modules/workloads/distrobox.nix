@@ -1,9 +1,8 @@
 { pkgs, ... }:
 
 {
-  virtualisation.podman = {
+  virtualisation.docker = {
     enable = true;
-    dockerCompat = true;
   };
 
   environment.systemPackages = with pkgs; [

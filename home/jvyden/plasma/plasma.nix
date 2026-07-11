@@ -64,6 +64,15 @@
     };
 
     input = {
+      mice = [
+        {
+          enable = true;
+          name = "Razer Razer DeathAdder Elite";
+          accelerationProfile = "none";
+          vendorId = "1532";
+          productId = "005c";
+        }
+      ];
       touchpads = [
         { # red-nugget
           vendorId = "0002";

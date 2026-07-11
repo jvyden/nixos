@@ -9,6 +9,7 @@
     ../../modules/workloads/gaming.nix
     ../../modules/workloads/emu.nix
     ../../modules/workloads/distrobox.nix
+    ../../modules/workloads/dev.nix
   ];
 
   hardware.enableRedistributableFirmware = true; # for wifi chip :3

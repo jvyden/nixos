@@ -15,6 +15,8 @@
     avalonia-ilspy
     imhex
     gdb
+    nixd
+    nil
   ];
 
   virtualisation.docker.enable = true;
