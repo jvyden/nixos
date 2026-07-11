@@ -20,5 +20,6 @@
   ];
 
   virtualisation.docker.enable = true;
-  users.users.jvyden.extraGroups = ["docker"];
+  users.users.jvyden.extraGroups = [ "docker" ];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 }
