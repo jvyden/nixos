@@ -13,6 +13,7 @@
     ../../modules/workloads/dev.nix
     ../../modules/workloads/vr.nix
     ./kernel.nix
+    ./wifi-ap.nix
   ];
 
   hardware.enableRedistributableFirmware = true; # for wifi chip :3

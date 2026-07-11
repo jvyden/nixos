@@ -1,23 +1,35 @@
 let
   jvyden = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJdsds+69i08slN7jTAWD12EAF5R7c7gbt645WY7KxeiiAz2OJSSs6zmM01BAkSNYKsDYc1nH3Jlc2hr72Gm0POM17uygCepIkJv8OkLgxifTsuGsiXFe2E++jqKbh+wYtWZkkK3pGQvToP2gBWpSMphUmMtnaDuQN9fZNYjb6F3rWKjE0n1IoYWcosaUafnRlocniJfdMR1naZPkhAIUbwwckdrsUhycBXCc6ShriQ9pu93c+wPOJxeqB0mSo7VsyUQHcD5/dC6c6K5whfJWpSfNrz5r9Sfi1AUE6ZRef+ZqWchkLOZCNC9UXzjnpm0DaO3qi8VYf6WmXYjJMXNtP1XdVR2/kACgB7vOMd44KbFvDHgjPttEujmDWtAVfnAC6vskGiOGLT2jUl7CPJekAhEKEw/iXYmt2bi9lwLxRt/zRkb2LLhV2YRCROqJ/dTBsdC/XQz/ihJF2/NJ5Cuv/vsb9CrPyFFCVGknXKxy4nWVZVwjbpueTqekBuip7fW9+ztTOntVhdAyuaPpW8mxCfxUHMyClJJCsquegRk2rTxzubPAeOD5JcexIfRDuyD4qTHjMVgddhqX6IBc9kAsgM+JYycf9ojD1VbOLRG1BeiBmBwvxu//ZcaHQ043tJkumee219N3tMQwmaWmUyT3KJ+U+532AqHVViUohuzviYw== jvyden420@gmail.com";
-  users = [jvyden];
+  users = [ jvyden ];
 
   jvyden-pi5 = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCI7dPzDdCnYlFHWVqd+rZUfVs4OxV6p/bn16LsRZ3lc94XtHocYyYlupTgOyHpwAdU/9bEh8p/Vpvv3Kv2W4cLvpYXkaQSjLDxT5+jhq5CZvBBMYi63es9vRiNGUvSq0BBsbUsOi91QQqaW7I0ZT7q9W5w+P0T3hPsPyDlEpJxm/yDmYyjXw+HulkfqTWvOxY4bUjI0lSoV/LR6NfErK+rXYZuIUmltIGLnACOKLykqmEXKGCyot2BrSedL1hzbKFeJ2MhTTi9WUrvD9Qqdu3KuI88Ri9PbOx9wHKq8lmx69dxcGl2l6s3TUpFqw008qYMl6uIIDKlH/S5TeaXMX8grWG9k2LZZm5uBsn/brqR71F0EgOTffacebf3MZfxhP14OLkDfHE4F3V7o67fxlIaTR+jMcFi3J8KEAhB/sCnpxYHZ09Tqzgj/1uGgWVi2yMLq5chJzmi67esd9qltOG+uKy0I+aaluhzsdnOnWb5JOzi8W7uL0Y6hmyPgjyjZJeNXI5/vN7YO5tQ68Uq2V+ALaUaxbhYQHkJ3xi0QUtVJpLWehBePwLiE65+VItSEoph1Mt2kHzeav0YO5jmHUPyoHKVh2pfeNQdnFAB6vZqWTVgRwpZtLKS4ZRbGxun+/6ZSgbrSleg4u/9b8YaikkBUxmgphJGHU2l/04VQy6i0w== root@jvyden-pi5";
   the-overcooler = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQY+p/1D+0EPn69scZ+iKnQ/WNmsh2XqWyN0a/O8JlgiPBpoMqxE4W7IW8SrOd4W0HFyV041TR7bD5QMKlJvqbFhnFJ7qpiwPxXz+hiiFN0OUY2Voa9BH/oLfpmzGMHv74zHUgz03N/ePjflbjyDEOpsVLnf3QMVQ+jn5ViWy6w8G0MBvsnimR4WJC18mQ8LqkHiuu4xV+F/xEU/v1b+5udm6v/Va36fXh5HhpQ0YXSzCRzi9IiNJtZXdhiuv0NfUo+EpKrGBCGj7T5az+dPYJE2Rm94iBXQ3uRjG78WULoGkCpwFHzlUmCYaaznbVROGppn77lvElGqDXhKRtDTPUDJjpuHoszVI1M5Gq0ZXDoL4DYZfGef11/UffwkVcO7CF2UaK51eOSP/kSjPF6IZLUs4RuaYtm14WcqznBvdd16kuy8WRQgba7BeTYXpy1wzSZxfhDU0c2Curp9eJ+8Agzd06XK92udsiXoOFxDESghl7ID0vJWSHVGmFnnfLK9c= root@the-overcooler";
   jvyden-thinkpad = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDYIKhKFn0Za1fDxEbAZi2w4nWMkNJJIfuyDvm6yEbkcuKkI0V0KILInJ6ogGbeVylPq86zcP1yuvhtB/Ie2Qry3iwEBQTW6TwPSuop/jWPzRUdrlBTFnYB2B5wJNICdtINKNuCpzVuUb0tkQnfnZqSNcvGrW1tn/QleZk3sF4kvevbrUo+t+srwjAX0g+PX5F1EdBu+rE3YAqciNUjKALkEgerhPPtxWDBJJMjWlCiqAH1qT1FcLmdd5iPJ9jRb6Zve5ju+MBNxa8ipDkoZst5QEkx2AWeFjPt+pS534o4nJWpq/wEMA6p11g6r8BRx2p7FSs1Nj2bj1StsWkCgQwXt3iLqXLzzeMwC5iE3olRZVjm4GdNX7EwDz9StIqjLPCtINlUr3Esp1x+W9y7zm2y9embUN72OEuFCks4ECoD9xn6Fqp+NAFKkn9LNwpHrP9yzoitwZqU8183L6hYVq3ZnKe/xd9Tnh9qa83+GU9BDMVjB0Ht1D+mTpf9rAE0N3ic70ENHPSAoX/Ey05J+0q2lhcP2JGwyJPuIc3SgxupaTAyHtNLLln+7tDGXu/3VYUlf/E2n3AwF3kQ7z4d3p7Kq6mHEwod8Qs8IAHoYtvhEfW3je+g2Lew1NVGkgEv95tOBSabBGu0l6o/MnPOflS4V2Llz1Q48SFHjQdBmPr+aw== root@jvyden-thinkpad";
   red-nugget = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDhYeQ9fAcuN/1mOOBDdjz/7MjIJDOGjNg46jonWFGwxoc9hAfV9P/VEw+BH+Qt5vABeKtb7qOMPRF2rX/HPRGeO/wZ2ahffwXHynp7XaPkssTYJIm4ClVLH4tcKilpq99zDUv3gCeTsXecGUwRzOsRpnJi4DmCElzSh6wUc4QpJt3KQQcxKUAMUOCiqNhM1VoQzbbACb+XemnMM8gwz3ok57j4fu9fhg0Fo0AW+KUEM0Rt/ll3n5x4Iae4UFJNPycADq0lbELpDk5obkV2tqwukIsKFqfIRt7BQDtIKwG6Nes4UOcltQZnOdzioux2xNQRcFfqmkp4PImmgilGWgZvP6q8pt36wAvX2j1MmInr5jF4fAaeR4SbOQ+MA+9Nj/Jox8ZqXJ6Qz3qQnh64q/GnZK7KVHcuBLTSC1O7+azcIGIgHnlH6rfZANYmN3wMPYug2qD6J+PllbHH5a4/l5HxDaUYliAm/J6PuNpDzasLgARAqO/j9oEKDeBsOkX3rq0= root@nixos";
-  systems = [jvyden-pi5 the-overcooler jvyden-thinkpad red-nugget];
+
+  systems = [
+    jvyden-pi5
+    the-overcooler
+    jvyden-thinkpad
+    red-nugget
+  ];
 
   all = users ++ systems;
-in {
-  "secrets/password.age".publicKeys = [jvyden] ++ systems;
-  "secrets/jvyden-pi5-cloudflared.age".publicKeys = users ++ [jvyden-pi5];
-  "secrets/continuwuity-turn-secret.age".publicKeys = users ++ [jvyden-pi5];
-  "secrets/copyparty/jvyden-password.age".publicKeys = users ++ [jvyden-pi5];
-  "secrets/copyparty/localguest-password.age".publicKeys = users ++ [jvyden-pi5];
-  "secrets/resonite/credentials.age".publicKeys = users ++ [jvyden-thinkpad jvyden-pi5];
-  "secrets/wifi-ap-password.age".publicKeys = [jvyden] ++ [jvyden-pi5];
-  "secrets/xyztunnel-key-private.age".publicKeys = [jvyden] ++ [jvyden-pi5];
-  "secrets/xyztunnel-key-pub.age".publicKeys = [jvyden] ++ [jvyden-pi5];
-  "secrets/fmd-env.age".publicKeys = [jvyden] ++ [jvyden-pi5];
+in
+{
+  "secrets/password.age".publicKeys = [ jvyden ] ++ systems;
+
+  "secrets/jvyden-pi5-cloudflared.age".publicKeys = users ++ [ jvyden-pi5 ];
+  "secrets/continuwuity-turn-secret.age".publicKeys = users ++ [ jvyden-pi5 ];
+  "secrets/copyparty/jvyden-password.age".publicKeys = users ++ [ jvyden-pi5 ];
+  "secrets/copyparty/localguest-password.age".publicKeys = users ++ [ jvyden-pi5 ];
+  "secrets/xyztunnel-key-private.age".publicKeys = [ jvyden ] ++ [ jvyden-pi5 ];
+  "secrets/xyztunnel-key-pub.age".publicKeys = [ jvyden ] ++ [ jvyden-pi5 ];
+  "secrets/fmd-env.age".publicKeys = [ jvyden ] ++ [ jvyden-pi5 ];
+  "secrets/resonite/credentials.age".publicKeys = users ++ [
+    jvyden-thinkpad
+    jvyden-pi5
+  ];
+
+  "secrets/wifi-ap-password.age".publicKeys = [ jvyden ] ++ [ the-overcooler ];
 }

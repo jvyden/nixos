@@ -10,7 +10,6 @@
     ./immich.nix
     ./minecraft/minecraft.nix
     ./unbound.nix
-    ./wifi-ap.nix
     ./xyztunnel.nix
     ./fmd.nix
     ./ntfy.nix
@@ -43,7 +42,7 @@
     autoScrub = {
       enable = true;
       interval = "weekly";
-      fileSystems = ["/"];
+      fileSystems = [ "/" ];
     };
   };
 
@@ -71,7 +70,7 @@
     "/var/log" = {
       device = "tmpfs";
       fsType = "tmpfs";
-      options = ["size=64M"];
+      options = [ "size=64M" ];
     };
     "/home" = {
       device = "/dev/disk/by-uuid/90ae52b4-d5e8-4b80-ae84-dd534b402359";
