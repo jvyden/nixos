@@ -15,5 +15,6 @@
   environment.systemPackages = with pkgs; [
     protonup-qt
     osu-lazer-bin
+    mangohud
   ];
 }

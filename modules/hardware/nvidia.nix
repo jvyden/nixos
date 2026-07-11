@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -12,4 +12,8 @@
   };
 
   boot.blacklistedKernelModules = [ "nouveau" ];
+
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.nvidia
+  ];
 }

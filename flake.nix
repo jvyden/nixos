@@ -24,6 +24,7 @@
       url = "github:xarblu/kwin-effects-better-blur-dx";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-xr.url = "github:jvyden/nixpkgs-xr";
   };
 
   nixConfig = {
@@ -51,6 +52,7 @@
       plasma-manager,
       resonite,
       kwin-effects-better-blur-dx,
+      nixpkgs-xr,
       ...
     }@inputs:
     let
