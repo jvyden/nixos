@@ -1,7 +1,28 @@
 # ref'd from Version33
 # https://github.com/Version33/HomeServer/blob/25775d6e4cb678fd4c2ff45324b0371d1d2b308c/modules/services/fmd.nix#L27
 
-{ nixpkgs, config, ... }:
+{
+  nixpkgs,
+  pkgs,
+  config,
+  ...
+}:
+let
+  # TODO: investigate why the hell this is needed?
+  # complains about pnpm_11 and v4 when it doesn't even exist in NixOS?
+  # literally redefining pnpmDeps as-is fixes this somehow
+  fmd-server = nixpkgs.legacyPackages.aarch64-linux.fmd-server.overrideAttrs (
+    finalAttrs: previousAttrs: {
+      pnpmDeps = pkgs.fetchPnpmDeps {
+        inherit (finalAttrs.passthru.ui) pname src;
+        pnpm_10 = pkgs.pnpm_10;
+        sourceRoot = "${finalAttrs.src.name}/${finalAttrs.passthru.ui.pnpmRoot}";
+        fetcherVersion = 3;
+        hash = "sha256-vKSKPwOkb7TwDUlkl8lUvO6tLKp2NyBQ0BGxThUN2P8=";
+      };
+    }
+  );
+in
 {
   age.secrets."fmd-env" = {
     file = ../../secrets/fmd-env.age;
@@ -33,7 +54,7 @@
       Type = "simple";
       User = "fmd-server";
       Group = "fmd-server";
-      ExecStart = "${nixpkgs.legacyPackages.aarch64-linux.fmd-server}/bin/fmd-server serve";
+      ExecStart = "${fmd-server}/bin/fmd-server serve";
       Restart = "on-failure";
       RestartSec = "5s";
 
