@@ -29,8 +29,11 @@
       "video"
       "audio"
       "networkmanager"
+      "jvyden"
     ];
   };
+
+  users.groups.jvyden = { };
 
   services.openssh = {
     enable = true;
