@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   programs.konsole = {
     enable = true;
@@ -18,6 +18,9 @@
       extraConfig = {
         Appearance = {
           AntiAliasFonts = false;
+        };
+        Scrolling = {
+          HistoryMode = 2;
         };
       };
     };
