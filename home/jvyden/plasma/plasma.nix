@@ -53,6 +53,7 @@
     ];
 
     kwin = {
+      edgeBarrier = 0;
       titlebarButtons = {
         right = [
           "keep-above-windows"
