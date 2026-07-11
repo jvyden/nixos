@@ -25,12 +25,12 @@
     uid = 1000;
     hashedPasswordFile = config.age.secrets.password.path;
     isNormalUser = true;
+    group = "jvyden";
     extraGroups = [
       "wheel"
       "video"
       "audio"
       "networkmanager"
-      "jvyden"
     ];
   };
 
