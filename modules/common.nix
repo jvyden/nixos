@@ -22,6 +22,7 @@
   users.mutableUsers = false;
 
   users.users.jvyden = {
+    uid = 1000;
     hashedPasswordFile = config.age.secrets.password.path;
     isNormalUser = true;
     extraGroups = [
@@ -33,7 +34,9 @@
     ];
   };
 
-  users.groups.jvyden = { };
+  users.groups.jvyden = {
+    gid = 1000;
+  };
 
   services.openssh = {
     enable = true;
