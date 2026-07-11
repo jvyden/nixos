@@ -74,7 +74,8 @@
         }
       ];
       touchpads = [
-        { # red-nugget
+        {
+          # red-nugget
           vendorId = "0002";
           productId = "0007";
           name = "SynPS/2 Synaptics TouchPad";
@@ -87,7 +88,8 @@
           tapToClick = true;
           scrollSpeed = 0.3;
         }
-        { # jvyden-thinkpad
+        {
+          # jvyden-thinkpad
           vendorId = "001d";
           productId = "06cb";
           name = "Synaptics tm2964-001";
@@ -135,6 +137,14 @@
           RefractionTextureRepeatMode = 1;
           Saturation = 125;
           WindowClasses = "org.kde.dolphin";
+        };
+      };
+
+      plasmanotifyrc = {
+        DoNotDisturb = {
+          WhenFullscreen = false;
+          WhenScreenSharing = false;
+          WhenScreensMirrored = false;
         };
       };
     };
