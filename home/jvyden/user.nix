@@ -7,6 +7,7 @@
     ./plasma/plasma.nix
     ./zed.nix
     ./konsole/konsole.nix
+    ./gpg.nix
   ];
 
   assertions = lib.mkForce [];
