@@ -8,6 +8,7 @@
     ./zed.nix
     ./konsole/konsole.nix
     ./gpg.nix
+    ./yt-dlp.nix
   ];
 
   assertions = lib.mkForce [];
