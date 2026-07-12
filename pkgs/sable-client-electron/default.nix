@@ -36,6 +36,10 @@ buildNpmPackage (finalAttrs: {
   };
 
   prePatch = ''
+    echo "Executing prePatch"
+
+    patch -d . < ${./devtools.patch}
+
     # workaround for https://github.com/electron/electron/issues/31121
     sed -i "s#process\.resourcesPath#'$out/opt/Sable-Client-Electron/resources'#g" \
       main.js
@@ -43,6 +47,8 @@ buildNpmPackage (finalAttrs: {
     # workaround sable using __dirname in the wrong spot for now
     sed -i "s#__dirname#'$out/opt/Sable-Client-Electron/resources'#g" \
       main.js
+
+    echo "Patched"
   '';
 
   # electron builds must be writable

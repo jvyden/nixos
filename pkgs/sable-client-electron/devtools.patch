@@ -1,0 +1,27 @@
+diff --git a/main.js b/main.js
+index 416d51c..0f0f4ab 100644
+--- a/main.js
++++ b/main.js
+@@ -37,14 +37,13 @@ if (!gotTheLock) {
+             title: "Sable Client",
+             icon: path.join(__dirname, 'favicon.png'),
+             webPreferences: {
++                devTools: true,
+                 nodeIntegration: false,
+                 contextIsolation: true,
+                 preload: path.join(__dirname, 'preload.js')
+             }
+         });
+ 
+-        mainWindow.removeMenu();
+-
+         mainWindow.webContents.on('did-finish-load', () => {
+             mainWindow.webContents.executeJavaScript('localStorage.setItem("notificationsEnabled", "true");');
+         });
+@@ -165,4 +164,4 @@ if (!gotTheLock) {
+             mainWindow.focus();
+         }
+     });
+-}
+\ No newline at end of file
++}
