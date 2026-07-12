@@ -18,9 +18,11 @@
   services.hostapd = {
     enable = true;
     radios.wlp5s0 = {
-      band = "5g";
-      channel = 149; # 36
-      countryCode = "US";
+      band = "6g";
+      channel = 69;
+      countryCode = "DE";
+      noScan = true;
+      driver = "nl80211";
       networks.wlp5s0 = {
         ssid = "Dr. Breen's Private Reserve";
         authentication.saePasswords = [
@@ -28,29 +30,65 @@
             passwordFile = config.age.secrets."wifi-ap-password".path;
           }
         ];
+        settings = {
+          # Security
+          wpa_key_mgmt = "SAE";
+          ieee80211w = 2;
+          wme_enabled = 1;
+          wmm_enabled = 1;
+        };
       };
       wifi4 = {
         enable = true;
         capabilities = [
+          "LDPC"
           "HT40+"
-          "HT40-"
+          "GF"
           "SHORT-GI-20"
           "SHORT-GI-40"
-          "DSSS_CCK-40"
+          "TX-STBC"
+          "RX-STBC1"
+          "MAX-AMSDU-7935"
         ];
       };
       wifi5 = {
         enable = true;
-        require = true;
-        operatingChannelWidth = "80";
+        require = false;
+        operatingChannelWidth = "160";
         capabilities = [
+          "VHT160"
+          "RXLDPC"
           "SHORT-GI-80"
+          "SHORT-GI-160"
+          "TX-STBC-2BY1"
           "SU-BEAMFORMEE"
+          "MU-BEAMFORMEE"
+          "RX-ANTENNA-PATTERN"
+          "TX-ANTENNA-PATTERN"
+          "RX-STBC-1"
+          "BF-ANTENNA-4"
+          "MAX-MPDU-11454"
+          "MAX-A-MPDU-LEN-EXP7"
         ];
+      };
+      wifi6 = {
+        enable = true;
+        require = true;
+        operatingChannelWidth = "160";
+        singleUserBeamformer = false;
+        singleUserBeamformee = false;
+        multiUserBeamformer = false;
       };
 
       settings = {
-        vht_oper_centr_freq_seg0_idx = 155; # 42
+        # vht_oper_centr_freq_seg0_idx = 155; # 42
+        op_class = 134;
+        country3 = "0x49";
+        he_oper_chwidth = 2;
+        he_6ghz_reg_pwr_type = 2; # Very low power AP (default)
+        he_oper_centr_freq_seg0_idx = 79;
+        he_6ghz_max_mpdu = 2;
+        he_6ghz_max_ampdu_len_exp = 7;
       };
     };
   };
