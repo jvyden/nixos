@@ -7,6 +7,7 @@
     ../../modules/hardware/nvidia.nix
     ../../modules/hardware/bluetooth.nix
     ../../modules/desktop/common.nix
+    ../../modules/desktop/no-sleep.nix
     ../../modules/workloads/gaming.nix
     ../../modules/workloads/emu.nix
     ../../modules/workloads/distrobox.nix
