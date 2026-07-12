@@ -1,6 +1,5 @@
 {
   pkgs,
-  fetchFromGitHub,
   ...
 }:
 
@@ -12,18 +11,20 @@ let
         src = pkgs.fetchFromGitHub {
           owner = "86Box";
           repo = "86Box";
-          rev = "06f3706c3710e8798373e5991c19234840932f8e";
-          hash = "sha256-yRpTVm6guiKJ4Shx8A/2462a3W11U39ecn9C+7u4vpQ=";
+          rev = "53fd57d980f9f6da7f0a23cdb6ce385171e92a41";
+          hash = "sha256-sKOrrhWtwgia/jhqzdmSXyI+H2cePQGS5MI8Rfc2gqo=";
         };
         patches = [ ];
         passthru.roms = pkgs.fetchFromGitHub {
           owner = "86Box";
           repo = "roms";
-          rev = "34445a5683402b8ee6f2b09feba242e04eaaf17d";
-          hash = "sha256-UoezMIfGxDWdtY0p6Ygm+HFAp1GVH+LQYsSCX6WO9F0=";
+          rev = "27ce81b34e37a96a25232984d67389b9206ff91a";
+          hash = "sha256-+c7bw3mGCcAELC1GjFa7OUe11kQuuS2BRr+wZdTayEk=";
         };
-        postInstall = (builtins.replaceStrings [ "96 " "192 " " 512" ] [ "" "" "" ] prev.postInstall);
-        nativeBuildInputs = prev.nativeBuildInputs ++ [pkgs.vde2];
+        nativeBuildInputs = prev.nativeBuildInputs ++ [
+          pkgs.vde2
+          pkgs.vulkan-headers
+        ];
       });
     }
   );
