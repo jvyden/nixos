@@ -61,6 +61,7 @@
       copyparty # for partyfuse utility
       mesa-demos
       thunderbird
+      wl-clipboard
     ]
     ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-client-electron

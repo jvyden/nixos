@@ -13,6 +13,7 @@
     ../../modules/workloads/distrobox.nix
     ../../modules/workloads/dev.nix
     ../../modules/workloads/vr.nix
+    ../../modules/workloads/waydroid.nix
     ./kernel.nix
     ./wifi-ap.nix
   ];

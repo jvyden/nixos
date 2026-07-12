@@ -17,6 +17,7 @@
     gdb
     nixd
     nil
+    android-tools
   ];
 
   virtualisation.docker.enable = true;
