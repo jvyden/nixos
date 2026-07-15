@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   # key configuration
@@ -31,6 +31,20 @@
           persistentKeepalive = 25;
         }
       ];
+    };
+  };
+
+  # A couple tweaks to improve reliability
+  systemd.services.wg-quick-wg0 = {
+    wants = [ "network-online.target" ];
+    after = [ "network-online.target" ];
+
+    unitConfig = {
+      StartLimitInterval = lib.mkForce 0;
+    };
+    serviceConfig = {
+      Restart = lib.mkForce "always";
+      RestartSec = lib.mkForce 5;
     };
   };
 }
