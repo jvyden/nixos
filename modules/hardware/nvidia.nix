@@ -6,7 +6,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   nixpkgs.config = {
     allowUnfree = true;
-    cudaSupport = true;
+    # cudaSupport = true; # holy hell this rebuilds a lot of stuff
   };
 
   hardware.nvidia = {
@@ -21,4 +21,11 @@
   ];
 
   services.lact.enable = true;
+
+  # software tweaks
+  programs.obs-studio.package = (
+    pkgs.obs-studio.override {
+      cudaSupport = true;
+    }
+  );
 }
