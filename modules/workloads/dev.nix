@@ -8,6 +8,8 @@
     dotnetCorePackages.sdk_10_0
     nixfmt
     gdb
+    nodejs
+    python3
     # tools, IDEs, debuggers
     angryipscanner
     zed-editor
