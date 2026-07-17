@@ -4,7 +4,10 @@
   hardware.graphics.enable32Bit = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+  };
 
   hardware.nvidia = {
     open = true;

@@ -41,6 +41,11 @@
     };
   };
 
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+  };
+
   environment.systemPackages =
     with pkgs;
     [
@@ -53,7 +58,6 @@
       kdePackages.filelight
       fsearch
       mpv
-      obs-studio
       kdePackages.krdc
       remmina
       xauth # we primarily prefer wayland but this is useful for X forwarding

@@ -43,7 +43,7 @@
       StartLimitInterval = lib.mkForce 0;
     };
     serviceConfig = {
-      Restart = lib.mkForce "always";
+      Restart = lib.mkForce "on-failure"; # Type = oneshot
       RestartSec = lib.mkForce 5;
     };
   };
