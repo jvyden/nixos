@@ -16,6 +16,7 @@
     ../../modules/workloads/waydroid.nix
     ./kernel.nix
     ./wifi-ap.nix
+    ./watch.nix
   ];
 
   hardware.enableRedistributableFirmware = true; # for wifi chip :3

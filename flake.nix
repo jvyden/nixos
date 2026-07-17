@@ -26,6 +26,7 @@
     };
     nixpkgs-xr.url = "github:jvyden/nixpkgs-xr";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    pinetime-heartrate-server.url = "github:jvyden/pinetime-heartrate-server";
   };
 
   nixConfig = {
@@ -57,6 +58,7 @@
       kwin-effects-better-blur-dx,
       nixpkgs-xr,
       nix-cachyos-kernel,
+      pinetime-heartrate-server,
       ...
     }@inputs:
     let

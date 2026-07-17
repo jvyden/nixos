@@ -20,6 +20,7 @@
     nixd
     nil
     android-tools
+    websocat
   ];
 
   virtualisation.docker.enable = true;
