@@ -12,18 +12,18 @@
 
   # remove the card from anything that could control it
   networking.wireless.interfaces = [ ];
-  networking.networkmanager.unmanaged = [ "wlp5s0" ];
+  networking.networkmanager.unmanaged = [ "wlp6s0" ];
 
   # the actual access point
   services.hostapd = {
     enable = true;
-    radios.wlp5s0 = {
+    radios.wlp6s0 = {
       band = "6g";
       channel = 69;
       countryCode = "DE";
       noScan = true;
       driver = "nl80211";
-      networks.wlp5s0 = {
+      networks.wlp6s0 = {
         ssid = "Dr. Breen's Private Reserve";
         authentication.saePasswords = [
           {
@@ -97,7 +97,7 @@
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   networking = {
     useDHCP = false;
-    interfaces.wlp5s0 = {
+    interfaces.wlp6s0 = {
       ipv4.addresses = [
         {
           address = "10.69.69.1";
@@ -109,10 +109,10 @@
     nat = {
       enable = true;
       externalInterface = "enp8s0";
-      internalInterfaces = [ "wlp5s0" ];
+      internalInterfaces = [ "wlp6s0" ];
     };
 
-    firewall.interfaces.wlp5s0.allowedUDPPorts = [
+    firewall.interfaces.wlp6s0.allowedUDPPorts = [
       53 # dns
       67 # dhcp
     ];
@@ -123,7 +123,7 @@
     enable = true;
     resolveLocalQueries = false;
     settings = {
-      interface = "wlp5s0";
+      interface = "wlp6s0";
       bind-interfaces = true;
       port = 0; # disable DNS server
       dhcp-range = [ "10.69.69.100,10.69.69.200,24h" ];
