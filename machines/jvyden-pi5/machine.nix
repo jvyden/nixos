@@ -4,7 +4,7 @@
   imports = [
     ../../modules/hardware/rpi5.nix
     ../../modules/common.nix
-    ./continuwuity.nix
+    ./matrix/matrix.nix
     ./copyparty.nix
     ./postgres.nix
     ./immich.nix

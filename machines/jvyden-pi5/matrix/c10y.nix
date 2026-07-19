@@ -1,10 +1,6 @@
 { config, continuwuity, pkgs, lib, ... }:
 
 {
-  imports = [
-    ./out-of-your-element.nix
-  ];
-
   age.secrets."continuwuity-turn-secret" = {
     file = ../../secrets/continuwuity-turn-secret.age;
     mode = "770";
