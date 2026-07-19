@@ -17,6 +17,7 @@
   system.stateVersion = "25.11";
   time.timeZone = "America/New_York";
 
+  boot.kernel.sysctl."kernel.sysrq" = 1;
   boot.tmp.useTmpfs = true;
 
   users.mutableUsers = false;

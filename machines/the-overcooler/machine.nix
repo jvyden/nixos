@@ -4,6 +4,7 @@
     ../../modules/common.nix
     ../../modules/home.nix
     ../../modules/boot-limine.nix
+    ../../modules/ld.nix
     ../../modules/hardware/nvidia.nix
     ../../modules/hardware/bluetooth.nix
     ../../modules/desktop/common.nix
@@ -14,6 +15,8 @@
     ../../modules/workloads/dev.nix
     ../../modules/workloads/vr.nix
     ../../modules/workloads/waydroid.nix
+    ../../modules/workloads/virt.nix
+    ./virt-gpu.nix
     ./kernel.nix
     ./wifi-ap.nix
     ./watch.nix
