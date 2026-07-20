@@ -1,0 +1,59 @@
+diff --git a/src/core/info/version.rs b/src/core/info/version.rs
+index c8f0d4995..ad7c3c8e0 100644
+--- a/src/core/info/version.rs
++++ b/src/core/info/version.rs
+@@ -7,7 +7,7 @@
+ 
+ use std::sync::OnceLock;
+ 
+-pub const BRANDING: &str = "continuwuity";
++pub const BRANDING: &str = "continuwuity if-i'm-building-myself-I-might-as-well-put-something-funny-here edition";
+ pub const ROUTE_PREFIX: &str = "/_continuwuity";
+ pub const WEBSITE: &str = "https://continuwuity.org";
+ pub const SEMANTIC: &str = env!("CARGO_PKG_VERSION");
+@@ -42,5 +42,5 @@ fn init_version_ua() -> String {
+ 
+ fn init_version() -> String {
+ 	conduwuit_build_metadata::version_tag()
+-		.map_or_else(|| SEMANTIC.to_owned(), |extra| format!("{SEMANTIC} ({extra})"))
++		.map_or_else(|| SEMANTIC.to_owned(), |extra| format!("{SEMANTIC} ({extra}) (sick cool swag jvyden hax edition)"))
+ }
+diff --git a/src/web/pages/templates/_layout.html.j2 b/src/web/pages/templates/_layout.html.j2
+index ac884becb..8698c3c88 100644
+--- a/src/web/pages/templates/_layout.html.j2
++++ b/src/web/pages/templates/_layout.html.j2
+@@ -3,7 +3,7 @@
+ 
+ <head>
+     <meta charset="UTF-8" />
+-    <title>{% block title %}Continuwuity{% endblock %}</title>
++    <title>{% block title %}Hey Rally!{% endblock %}</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     {%- if !context.allow_indexing %}
+     <meta name="robots" content="noindex" />
+@@ -20,7 +20,7 @@
+     {%~ block footer ~%}
+         <footer>
+             <a href="{{ crate::ROUTE_PREFIX }}/"><img class="logo" alt="Continuwuity logo" src="{{ crate::ROUTE_PREFIX }}/resources/logo.svg"></a>
+-            <p>Powered by <a href="https://continuwuity.org">Continuwuity</a> {{ env!("CARGO_PKG_VERSION") }} &bullet; <a href="{{ crate::ROUTE_PREFIX }}/about">About</a></p>
++            <p>Powered by <a href="https://continuwuity.org">My Jarona</a> {{ env!("CARGO_PKG_VERSION") }} &bullet; <a href="{{ crate::ROUTE_PREFIX }}/about">About</a></p>
+         </footer>
+     {%~ endblock ~%}
+ </body>
+diff --git a/src/web/pages/templates/index.html.j2 b/src/web/pages/templates/index.html.j2
+index cf0c97b0f..5578ec08f 100644
+--- a/src/web/pages/templates/index.html.j2
++++ b/src/web/pages/templates/index.html.j2
+@@ -7,9 +7,10 @@
+ {%- block content -%}
+ <div class="panel middle">
+     <h1>
+-        Welcome to <a class="project-name" href="https://continuwuity.org">Continuwuity</a>!
++        Welcome to <a class="project-name" href="https://continuwuity.org">SAN FRANDISCO</a>!!!!!
+     </h1>
+-    <p>Continuwuity is successfully installed and working.</p>
++    <p>Continuwuity is successfully uninstalled and malfunctioning.</p>
++    <p>Sorry to keep you waiting!</p>
+     {%- if first_run %}
+     <p>To get started, <em>check the server logs</em> for instructions on how to create the first account.</p>
+     <p>For support, take a look at the <a href="https://continuwuity.org/introduction">documentation</a> or join the <a href="https://matrix.to/#/#continuwuity:continuwuity.org?via=continuwuity.org&via=ellis.link&via=explodie.org&via=matrix.org">Continuwuity Matrix room</a>.</p>

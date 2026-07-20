@@ -2,7 +2,7 @@
 
 {
   age.secrets."continuwuity-turn-secret" = {
-    file = ../../secrets/continuwuity-turn-secret.age;
+    file = ../../../secrets/continuwuity-turn-secret.age;
     mode = "770";
     owner = "continuwuity";
     group = "continuwuity";
@@ -11,7 +11,13 @@
   services.matrix-continuwuity = {
     enable = true;
     package =
-      continuwuity.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      continuwuity.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (
+        finalAttrs: prevAttrs: {
+          patches = (prevAttrs.patches or []) ++ [
+            ./swag.patch
+          ];
+        }
+      );
     settings = {
       global = {
         server_name = "jvyden.xyz";
@@ -61,7 +67,7 @@
         admin_room_tag = "m.server_notice";
         admin_room_notices = true;
 
-        forbidden_remote_server_names = import ../../secrets/continuwuity-banned-servers.nix;
+        forbidden_remote_server_names = import ../../../secrets/continuwuity-banned-servers.nix;
 
         url_preview_domain_explicit_allowlist = [ "*" ];
         url_preview_url_explicit_allowlist = [ "*" ];
