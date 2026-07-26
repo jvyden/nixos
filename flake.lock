@@ -660,11 +660,11 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1784120854,
-        "narHash": "sha256-KesHgItiZPgGX740axSiQLcIQ8D24MDqNpkKYWIek8k=",
+        "lastModified": 1784796856,
+        "narHash": "sha256-wWFrV5/Qbm+lyt5x20E/bSbfJiGKMo4RCxZV8cl/WZI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "753cc8a3a87467296ddd1fa93f0cc3e81120ee46",
+        "rev": "e2587caef70cea85dd97d7daab492899902dbf5d",
         "type": "github"
       },
       "original": {
@@ -725,11 +725,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1784299055,
-        "narHash": "sha256-hc38Lh2NM11HGTa9z+Sq0tUtQWmWcZCTxNFYmwNkZa8=",
+        "lastModified": 1785027751,
+        "narHash": "sha256-9vHDMvVUS/kmDMPMs+LyX8x17Fm3kRKdwpugZ4muhks=",
         "owner": "jvyden",
         "repo": "pinetime-heartrate-server",
-        "rev": "c2b8fc9f2fd0dbef710cc0a81e6140bb926a4338",
+        "rev": "eac8ae8aa37f3af3d546e27ebe7036ab1e0350d6",
         "type": "github"
       },
       "original": {

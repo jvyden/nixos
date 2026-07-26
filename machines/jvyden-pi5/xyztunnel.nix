@@ -47,4 +47,22 @@
       RestartSec = lib.mkForce 5;
     };
   };
+
+  # forward pinetime heartrate port
+  networking.firewall.allowedTCPPorts = [ 8765 ];
+  networking.nat = {
+    enable = true;
+    externalInterface = "wg0";
+    internalInterfaces = ["end0"];
+    forwardPorts = [
+      {
+        sourcePort = 8765;
+        proto = "tcp";
+        destination = "10.0.0.100:8765";
+      }
+    ];
+    extraCommands = ''
+      iptables -t nat -A POSTROUTING -o end0 -p tcp -d 10.0.0.100 --dport 8765 -j MASQUERADE
+    '';
+  };
 }
