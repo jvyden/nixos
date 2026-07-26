@@ -79,7 +79,22 @@
     packages =
       with pkgs;
       [
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
+        unifont
+        unifont_upper
+        unifont-csur
+        liberation_ttf
+        fira-code
+        fira-code-symbols
         ibm-plex
+        ubuntu-sans
+        ubuntu-sans-mono
+        ubuntu-classic
+        roboto
+        source-sans
+        font-awesome
       ]
       ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
         more-and-less-perfect-dos-vga
