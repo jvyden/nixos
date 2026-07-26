@@ -1,5 +1,5 @@
 diff --git a/src/core/info/version.rs b/src/core/info/version.rs
-index c8f0d4995..ad7c3c8e0 100644
+index c8f0d4995..83851ce91 100644
 --- a/src/core/info/version.rs
 +++ b/src/core/info/version.rs
 @@ -7,7 +7,7 @@
@@ -7,7 +7,7 @@ index c8f0d4995..ad7c3c8e0 100644
  use std::sync::OnceLock;
  
 -pub const BRANDING: &str = "continuwuity";
-+pub const BRANDING: &str = "continuwuity if-i'm-building-myself-I-might-as-well-put-something-funny-here edition";
++pub const BRANDING: &str = "continuwuity for foxes edition";
  pub const ROUTE_PREFIX: &str = "/_continuwuity";
  pub const WEBSITE: &str = "https://continuwuity.org";
  pub const SEMANTIC: &str = env!("CARGO_PKG_VERSION");
@@ -16,7 +16,7 @@ index c8f0d4995..ad7c3c8e0 100644
  fn init_version() -> String {
  	conduwuit_build_metadata::version_tag()
 -		.map_or_else(|| SEMANTIC.to_owned(), |extra| format!("{SEMANTIC} ({extra})"))
-+		.map_or_else(|| SEMANTIC.to_owned(), |extra| format!("{SEMANTIC} ({extra}) (sick cool swag jvyden hax edition)"))
++		.map_or_else(|| SEMANTIC.to_owned(), |extra| format!("{SEMANTIC} ({extra}) 🦊🦊🦊🦊🦊🦊🦊🦊 mxc://tchncs.de/f54bd13da268e4dff27aa0d9f76163ee157988c81950249157537038336"))
  }
 diff --git a/src/web/pages/templates/_layout.html.j2 b/src/web/pages/templates/_layout.html.j2
 index ac884becb..8698c3c88 100644
