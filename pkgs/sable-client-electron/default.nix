@@ -38,7 +38,7 @@ buildNpmPackage (finalAttrs: {
   prePatch = ''
     echo "Executing prePatch"
 
-    patch -d . < ${./devtools.patch}
+    patch -d . < ${./webPrefs.patch}
 
     # workaround for https://github.com/electron/electron/issues/31121
     sed -i "s#process\.resourcesPath#'$out/opt/Sable-Client-Electron/resources'#g" \

@@ -1,11 +1,12 @@
 diff --git a/main.js b/main.js
-index 416d51c..0f0f4ab 100644
+index 416d51c..8c5fb13 100644
 --- a/main.js
 +++ b/main.js
-@@ -37,14 +37,13 @@ if (!gotTheLock) {
+@@ -37,14 +37,14 @@ if (!gotTheLock) {
              title: "Sable Client",
              icon: path.join(__dirname, 'favicon.png'),
              webPreferences: {
++                webSecurity: false, // teehee no OPTIONS spam :3 (this is horribly insecure but idc :3)
 +                devTools: true,
                  nodeIntegration: false,
                  contextIsolation: true,
@@ -18,7 +19,7 @@ index 416d51c..0f0f4ab 100644
          mainWindow.webContents.on('did-finish-load', () => {
              mainWindow.webContents.executeJavaScript('localStorage.setItem("notificationsEnabled", "true");');
          });
-@@ -165,4 +164,4 @@ if (!gotTheLock) {
+@@ -165,4 +165,4 @@ if (!gotTheLock) {
              mainWindow.focus();
          }
      });
