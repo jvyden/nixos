@@ -24,17 +24,19 @@
       url = "github:xarblu/kwin-effects-better-blur-dx";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-xr.url = "github:jvyden/nixpkgs-xr";
+    nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     pinetime-heartrate-server.url = "github:jvyden/pinetime-heartrate-server";
   };
 
   nixConfig = {
     extra-substituters = [
+      "https://nix-community.cachix.org"
       "https://nixos-raspberrypi.cachix.org"
       "https://attic.xuyh0120.win/lantian"
     ];
     extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
