@@ -24,7 +24,7 @@
       url = "github:xarblu/kwin-effects-better-blur-dx";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
+    nixpkgs-xr.url = "github:jvyden/nixpkgs-xr";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     pinetime-heartrate-server.url = "github:jvyden/pinetime-heartrate-server";
   };
