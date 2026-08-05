@@ -11,17 +11,18 @@ let
   # TODO: investigate why the hell this is needed?
   # complains about pnpm_11 and v4 when it doesn't even exist in NixOS?
   # literally redefining pnpmDeps as-is fixes this somehow
-  fmd-server = nixpkgs.legacyPackages.aarch64-linux.fmd-server.overrideAttrs (
-    finalAttrs: previousAttrs: {
-      pnpmDeps = pkgs.fetchPnpmDeps {
-        inherit (finalAttrs.passthru.ui) pname src;
-        pnpm_10 = pkgs.pnpm_10;
-        sourceRoot = "${finalAttrs.src.name}/${finalAttrs.passthru.ui.pnpmRoot}";
-        fetcherVersion = 3;
-        hash = "sha256-vKSKPwOkb7TwDUlkl8lUvO6tLKp2NyBQ0BGxThUN2P8=";
-      };
-    }
-  );
+  fmd-server = nixpkgs.legacyPackages.aarch64-linux.fmd-server;
+  # .overrideAttrs (
+  #   finalAttrs: previousAttrs: {
+  #     pnpmDeps = pkgs.fetchPnpmDeps {
+  #       inherit (finalAttrs.passthru.ui) pname src;
+  #       pnpm_10 = pkgs.pnpm_10;
+  #       sourceRoot = "${finalAttrs.src.name}/${finalAttrs.passthru.ui.pnpmRoot}";
+  #       fetcherVersion = 3;
+  #       hash = "sha256-vKSKPwOkb7TwDUlkl8lUvO6tLKp2NyBQ0BGxThUN2P8=";
+  #     };
+  #   }
+  # );
 in
 {
   age.secrets."fmd-env" = {
