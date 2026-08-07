@@ -20,6 +20,7 @@
     ./kernel.nix
     ./wifi-ap.nix
     ./watch.nix
+    ./voice.nix
   ];
 
   hardware.enableRedistributableFirmware = true; # for wifi chip :3
