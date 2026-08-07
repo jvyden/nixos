@@ -118,5 +118,6 @@
     killall
     git
     net-tools
+    ffmpeg-full
   ];
 }
