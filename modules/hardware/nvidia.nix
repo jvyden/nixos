@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -12,12 +12,14 @@
   hardware.nvidia = {
     open = true;
     modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
   };
 
   boot.blacklistedKernelModules = [ "nouveau" ];
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
+    nvidia-container-toolkit
   ];
 
   services.lact.enable = true;
@@ -28,4 +30,16 @@
       cudaSupport = true;
     }
   );
+
+  # distrobox compat
+  virtualisation.docker.daemon.settings = {
+    features.cdi = true;
+    runtimes.nvidia = {
+      args = [];
+      path = "nvidia-container-runtime";
+    };
+  };
+  hardware.nvidia-container-toolkit = {
+    enable = true;
+  };
 }
