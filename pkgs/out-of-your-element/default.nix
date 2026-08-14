@@ -7,15 +7,15 @@
 
 buildNpmPackage rec {
   pname = "out-of-your-element";
-  version = "3.6.0";
+  version = "git";
 
   src = fetchGit {
     url = "https://gitdab.com/cadence/out-of-your-element/";
-    rev = "b5768697644ef64717641693e20fc730604fa7b6";
+    rev = "b3ef973568cd6bee817a8bc6368160bb39e7784b";
     ref = "v${version}";
   };
 
-  npmDepsHash = "sha256-h1mmE0/+Y7SBwnI0vaYvV+KqRDJGzwJvDUOkigzHcOY=";
+  npmDepsHash = "sha256-4iJCCpw+0YEnMPBAlHx6cOSImEjjOm/fbwzPnwzQrxw=";
   dontNpmBuild = true;
 
   nativeBuildInputs = [ makeWrapper ];
