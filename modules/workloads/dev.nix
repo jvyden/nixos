@@ -22,6 +22,7 @@
     android-tools
     websocat
     unityhub
+    alcom
   ];
 
   virtualisation.docker.enable = true;
