@@ -21,6 +21,7 @@
     nil
     android-tools
     websocat
+    unityhub
   ];
 
   virtualisation.docker.enable = true;
