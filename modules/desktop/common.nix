@@ -68,6 +68,7 @@
       mesa-demos
       thunderbird
       wl-clipboard
+      libmsquic # for resonite
     ]
     ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-client-electron
