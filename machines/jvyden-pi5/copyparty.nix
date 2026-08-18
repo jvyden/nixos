@@ -42,8 +42,8 @@
       shr = "/shares";
       og = true;
       og-ua = "(Discord|Twitter|Slack)bot";
-      xff-src = "lan";
-      xff-hdr = "cf-connecting-ip";
+      xff-src = "192.168.1.1";
+      xff-hdr = "x-forwarded-for";
       rproxy = 1;
       e2dsa = true;
       e2ts = true;
