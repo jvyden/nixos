@@ -11,7 +11,7 @@ buildNpmPackage rec {
 
   src = fetchGit {
     url = "https://gitdab.com/cadence/out-of-your-element/";
-    rev = "b3ef973568cd6bee817a8bc6368160bb39e7784b";
+    rev = "c7389ff2d6feb1c33a7f5963984c468691dc1b72";
     ref = "v${version}";
   };
 
