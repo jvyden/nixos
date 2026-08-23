@@ -1,4 +1,13 @@
 { pkgs, config, ... }:
+let
+  package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge.overrideAttrs (old: {
+    passthru = old.passthru // {
+      open = old.passthru.open.overrideAttrs (o: {
+        patches = (o.patches or [ ]) ++ [ ./nvidia-open-gpio-device-const.patch ];
+      });
+    };
+  });
+in
 {
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -12,7 +21,7 @@
   hardware.nvidia = {
     open = true;
     modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
+    package = package;
   };
 
   boot.blacklistedKernelModules = [ "nouveau" ];
@@ -35,7 +44,7 @@
   virtualisation.docker.daemon.settings = {
     features.cdi = true;
     runtimes.nvidia = {
-      args = [];
+      args = [ ];
       path = "nvidia-container-runtime";
     };
   };
