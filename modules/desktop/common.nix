@@ -52,6 +52,7 @@
     with pkgs;
     [
       firefox
+      ungoogled-chromium
       pavucontrol
       keepassxc
       vulkan-tools
@@ -61,6 +62,7 @@
       fsearch
       mpv
       kdePackages.krdc
+      kdePackages.kcalc
       remmina
       xauth # we primarily prefer wayland but this is useful for X forwarding
       cmus
@@ -69,6 +71,11 @@
       thunderbird
       wl-clipboard
       libmsquic # for resonite
+      xeyes
+      qbittorrent
+      scrcpy
+      parsec-bin
+      wine64
     ]
     ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-client-electron

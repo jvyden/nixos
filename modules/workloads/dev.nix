@@ -23,6 +23,9 @@
     websocat
     unityhub
     alcom
+    zig
+    blender
+    kdePackages.kdenlive
   ];
 
   virtualisation.docker.enable = true;

@@ -119,5 +119,8 @@
     git
     net-tools
     ffmpeg-full
+    p7zip
+    traceroute
+    icu
   ];
 }
