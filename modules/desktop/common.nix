@@ -76,6 +76,8 @@
       scrcpy
       parsec-bin
       wine64
+      krita
+      gimp
     ]
     ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-client-electron
