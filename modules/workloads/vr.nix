@@ -32,9 +32,12 @@
   };
 
   environment.systemPackages = with pkgs; [
+    xr-hardware
     wayvr
     xrizer
     vrcx
     bs-manager
   ];
+
+  services.udev.packages = with pkgs; [ xr-hardware ];
 }
