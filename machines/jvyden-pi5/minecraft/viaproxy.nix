@@ -7,6 +7,7 @@ in
   networking.firewall.allowedTCPPorts = [25565];
 
   systemd.services.viaproxy = {
+    enable = false;
     wantedBy = [ "multi-user.target" ];
     description = "Standalone proxy which allows players to join EVERY Minecraft server version";
     wants = [
