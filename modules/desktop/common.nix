@@ -78,6 +78,7 @@
       wine64
       krita
       gimp
+      nicotine-plus
     ]
     ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-client-electron
