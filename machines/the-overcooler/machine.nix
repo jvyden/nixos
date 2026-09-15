@@ -21,6 +21,7 @@
     ./wifi-ap.nix
     ./watch.nix
     ./voice.nix
+    ./automatic-shutdown.nix
   ];
 
   hardware.enableRedistributableFirmware = true; # for wifi chip :3
