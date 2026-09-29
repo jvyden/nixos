@@ -63,17 +63,17 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1789599977,
-        "narHash": "sha256-ADPI1e2GLyofBJ5dzzmHLvLI65rh9fI7t60ZcBL609Y=",
+        "lastModified": 1790571788,
+        "narHash": "sha256-lPhcuiGNTh9aAR2khVrLbTcLybknb3VpBckKkeIUVfE=",
         "ref": "main",
-        "rev": "1a8e5ccc09a619b3904ec18e6315dd0be710bb98",
-        "revCount": 7737,
+        "rev": "76e87c93d8f562ec5024859fb1cfd20db3cbe449",
+        "revCount": 7779,
         "type": "git",
         "url": "https://forgejo.ellis.link/continuwuation/continuwuity"
       },
       "original": {
         "ref": "main",
-        "rev": "1a8e5ccc09a619b3904ec18e6315dd0be710bb98",
+        "rev": "76e87c93d8f562ec5024859fb1cfd20db3cbe449",
         "type": "git",
         "url": "https://forgejo.ellis.link/continuwuation/continuwuity"
       }
@@ -353,11 +353,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1790571597,
-        "narHash": "sha256-YEZ+5EcNKF9eMstUgNMuwbAkezsgn6Gmu9+/YIPb6ts=",
+        "lastModified": 1790659482,
+        "narHash": "sha256-UGgta5ubiUH7NQbxVepOoNV6gkYGqzH/SG1ad+UJquw=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "c2e3197abc8360366fc8fb5c928b37a2b047f674",
+        "rev": "98f82b785d71191ebf53fc3ec13a669bd5e183bc",
         "type": "github"
       },
       "original": {

@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ../../modules/common.nix
@@ -29,6 +29,9 @@
   boot.loader.limine = {
     enableEditor = true;
   };
+
+  # we have a lot of ram so decrease swap percentage to be a bit lower
+  zramSwap.memoryPercent = lib.mkForce 20;
 
   # Networking setup
   networking = {

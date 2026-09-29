@@ -113,7 +113,7 @@ buildNpmPackage (finalAttrs: {
   postFixup =
     lib.optionalString stdenv.hostPlatform.isLinux ''
       makeWrapper ${electron}/bin/electron $out/bin/sable-client-electron \
-        --add-flags $out/opt/Sable-Client-Electron/resources/app.asar \
+        --add-flags "$out/opt/Sable-Client-Electron/resources/app.asar --disable-gpu"  \
         --set ELECTRON_FORCE_IS_PACKAGED true \
         ${lib.strings.optionalString withTTS ''
           --run 'if [[ "''${NIXOS_SPEECH:-default}" != "False" ]]; then NIXOS_SPEECH=True; else unset NIXOS_SPEECH; fi' \

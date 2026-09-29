@@ -33,6 +33,13 @@
   # electron slop may use wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # gtk slop may not use my gpu
+  environment.sessionVariables.GDK_RENDERING = "image";
+  # neither may QT
+  # environment.sessionVariables.QMLSCENE_DEVICE = "softwarecontext";
+  environment.sessionVariables.QT_OPENGL = "software";
+  environment.sessionVariables.QTWEBENGINE_CHROMIUM_FLAGS = "--disable-gpu";
+
   programs.firefox = {
     enable = true;
     nativeMessagingHosts.packages = [ pkgs.kdePackages.plasma-browser-integration ];
