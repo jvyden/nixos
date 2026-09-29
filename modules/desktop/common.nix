@@ -86,6 +86,7 @@
       krita
       gimp
       nicotine-plus
+      anki
     ]
     ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-client-electron
