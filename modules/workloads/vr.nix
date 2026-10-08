@@ -1,4 +1,4 @@
-{ nixpkgs-xr, pkgs, ... }:
+{ nixpkgs-xr, pkgs, lib, ... }:
 {
   imports = [
     nixpkgs-xr.nixosModules.nixpkgs-xr
@@ -25,10 +25,16 @@
     };
 
     package = (
-      pkgs.wivrn.override {
+      pkgs.wivrn.overrideAttrs (finalAttrs: prevAttrs: {
         cudaSupport = true;
+        cmakeFlags = (prevAttrs.cmakeFlags or []) ++ [
+          (lib.cmakeBool "WIVRN_FEATURE_DEBUG_GUI" true)
+        ];
+        buildInputs = (prevAttrs.buildInputs or []) ++ [
+          pkgs.sdl2-compat
+        ];
       }
-    );
+    ));
   };
 
   environment.systemPackages = with pkgs; [
