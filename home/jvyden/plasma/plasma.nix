@@ -110,6 +110,20 @@
       "services/org.kde.touchpadshortcuts.desktop".DisableTouchpad = [ ]; # the nugget is dumb and requires this.
     };
 
+    window-rules = [
+      {
+        description = "osu!";
+        match.window-class = {
+          type = "substring";
+          value = "osu!";
+        };
+        apply = {
+          fpplevel = 4;
+          tearingrule = 2;
+        };
+      }
+    ];
+
     configFile = {
       # plasma-manager seems to have issues applying the wallpaper properly, force apply this here
       plasmarc.Wallpapers.usersWallpapers = config.programs.plasma.workspace.wallpaper;
