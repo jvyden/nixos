@@ -1,0 +1,16 @@
+diff --git a/src/d2m/actions/create-room.js b/src/d2m/actions/create-room.js
+index a6230b2..22d9947 100644
+--- a/src/d2m/actions/create-room.js
++++ b/src/d2m/actions/create-room.js
+@@ -138,9 +138,9 @@ async function channelToKState(channel, guild, di) {
+ 	const globalAdmins = select("member_power", ["mxid", "power_level"], {room_id: "*"}).all()
+ 	const globalAdminPower = globalAdmins.reduce((a, c) => (a[c.mxid] = c.power_level, a), {})
+ 
+-	const additionalCreators = select("member_power", "mxid", {room_id: "*"}, "AND power_level > 100").pluck().all().concat(spaceCreatorsAndFounders)
++	// const additionalCreators = select("member_power", "mxid", {room_id: "*"}, "AND power_level > 100").pluck().all().concat(spaceCreatorsAndFounders)
+ 	const creationContent = {}
+-	creationContent.additional_creators = additionalCreators
++	// creationContent.additional_creators = additionalCreators
+ 
+ 	if (channel.type === DiscordTypes.ChannelType.GuildForum) creationContent.type = "m.space"
+ 
