@@ -40,10 +40,12 @@
   # i don't want to kill my sd card :c
   boot.kernel.sysctl."vm.swappiness" = 20;
   services.journald = {
-    storage = "volatile";
-    extraConfig = ''
-      RuntimeMaxUse=64M
-    '';
+    settings = {
+      Journal = {
+        Storage = "volatile";
+        RuntimeMaxUse = "64M";
+      };
+    };
   };
 
   # Disk setup

@@ -48,9 +48,13 @@
       e2dsa = true;
       e2ts = true;
       magic = true;
-      site = "https://files.jvyden.xyz";
+      site = "https://files.jvyden.xyz/";
       no-robots = true;
       nosubtle = 2;
+      zipmaxs = "1G";
+      zip-who = 2;
+      localtime = true;
+      sort = "-sz";
     };
 
     globalExtraConfig = ''

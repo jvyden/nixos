@@ -53,11 +53,15 @@
   services.avahi = {
     enable = true;
     nssmdns4 = true;
-    ipv4 = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      workstation = true;
+    settings = {
+      publish = {
+        "disable-publishing" = false;
+        publish-workstation = true;
+        publish-addresses = true;
+      };
+      server = {
+        use-ipv4 = true;
+      };
     };
   };
   services.lldpd.enable = true;
