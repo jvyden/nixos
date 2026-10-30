@@ -3,7 +3,7 @@
     self.submodules = true;
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-raspberrypi = {
-      url = "github:nvmd/nixos-raspberrypi/main";
+      url = "github:nvmd/nixos-raspberrypi/develop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     continuwuity.url = "git+https://forgejo.ellis.link/continuwuation/continuwuity?ref=main&rev=0415a35fa8eac1e3c45f0e5ee721fba7664327d1";
@@ -36,12 +36,14 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://nixos-raspberrypi.cachix.org"
-      # "https://attic.xuyh0120.win/lantian"
+      "https://cache.lantian.pub/lantian"
+      "https://cache.xinux.uz"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
-      # "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
+      "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
     ];
     extra-platforms = [
       "aarch64-linux"
