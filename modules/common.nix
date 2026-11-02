@@ -32,6 +32,7 @@
       "video"
       "audio"
       "networkmanager"
+      "wireshark"
     ];
   };
 
@@ -126,5 +127,7 @@
     p7zip
     traceroute
     icu
+    jq
+    wget
   ];
 }

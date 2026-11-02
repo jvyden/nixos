@@ -55,6 +55,11 @@
 
   programs.virt-manager.enable = true;
 
+  programs.wireshark = {
+    enable = true;
+    dumpcap.enable = true;
+  };
+
   environment.systemPackages =
     with pkgs;
     [

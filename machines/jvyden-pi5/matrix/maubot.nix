@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 {
   networking.firewall.allowedTCPPorts = [ 29316 ];
@@ -26,6 +26,10 @@
       echo
       sed
       join
+    ];
+    pythonPackages = with pkgs.python3Packages; [
+      aiohttp
+      sqlalchemy_1_4
     ];
   };
 
