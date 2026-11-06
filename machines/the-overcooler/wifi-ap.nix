@@ -14,6 +14,9 @@
   networking.wireless.interfaces = [ ];
   networking.networkmanager.unmanaged = [ "wlp6s0" ];
 
+  # extra kernel setup
+  boot.extraModprobeConfig = "options mt7925_common disable_clc=1\n";
+
   # the actual access point
   services.hostapd = {
     enable = true;
