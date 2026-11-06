@@ -6,6 +6,7 @@
     gcc
     clang
     dotnetCorePackages.sdk_10_0
+    dotnetCorePackages.sdk_11_0
     nixfmt
     gdb
     nodejs
