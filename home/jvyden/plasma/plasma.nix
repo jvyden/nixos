@@ -34,7 +34,7 @@
               launchers = [
                 "applications:io.github.cboxdoerfer.FSearch.desktop"
                 "applications:firefox.desktop"
-                "applications:sable-client-electron.desktop"
+                "applications:moe.sable.client.desktop"
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.keepassxc.KeePassXC.desktop"
               ];

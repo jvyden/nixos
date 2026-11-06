@@ -30,6 +30,7 @@
     nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     pinetime-heartrate-server.url = "github:jvyden/pinetime-heartrate-server";
+    sable.url = "git+https://git.sable.moe/SableClient/sable-next";
   };
 
   nixConfig = {
@@ -66,6 +67,7 @@
       nixpkgs-xr,
       nix-cachyos-kernel,
       pinetime-heartrate-server,
+      sable,
       ...
     }@inputs:
     let
@@ -90,7 +92,6 @@
           out-of-your-element = pkgs.callPackage ./pkgs/out-of-your-element { };
           uberbukkit = pkgs.callPackage ./pkgs/uberbukkit { };
           viaproxy = pkgs.callPackage ./pkgs/viaproxy { };
-          sable-client-electron = pkgs.callPackage ./pkgs/sable-client-electron { };
           more-and-less-perfect-dos-vga = pkgs.callPackage ./pkgs/more-and-less-perfect-dos-vga { };
 
           # NixOS installer for Raspberry Pi 5

@@ -2,6 +2,7 @@
   pkgs,
   self,
   config,
+  sable,
   ...
 }:
 {
@@ -93,8 +94,8 @@
       nicotine-plus
       anki
     ]
-    ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
-      sable-client-electron
+    ++ (with sable.packages.${pkgs.stdenv.hostPlatform.system}; [
+      sable-desktop
     ]);
 
   fonts = {

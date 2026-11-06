@@ -596,6 +596,19 @@
         "type": "github"
       }
     },
+    "nixpkgs_9": {
+      "locked": {
+        "lastModified": 1793540411,
+        "narHash": "sha256-us2GRWGXbOQpN1blyJGvmdx+g4bv9GoFYq5iiOHRiZ8=",
+        "rev": "0bb2eedc20e4739f29e8045034f2828ad7054f8f",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1106360.0bb2eedc20e4/nixexprs.tar.zst?lastModified=1793540411&rev=0bb2eedc20e4739f29e8045034f2828ad7054f8f"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
+      }
+    },
     "nvfetcher": {
       "inputs": {
         "flake-compat": [
@@ -699,7 +712,8 @@
         "nixpkgs-xr": "nixpkgs-xr",
         "pinetime-heartrate-server": "pinetime-heartrate-server",
         "plasma-manager": "plasma-manager",
-        "resonite": "resonite"
+        "resonite": "resonite",
+        "sable": "sable"
       }
     },
     "rust-analyzer-src": {
@@ -717,6 +731,24 @@
         "ref": "nightly",
         "repo": "rust-analyzer",
         "type": "github"
+      }
+    },
+    "sable": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_9"
+      },
+      "locked": {
+        "lastModified": 1793987186,
+        "narHash": "sha256-CMsvgFnFQB8iwBaOmK/WwnHMexiYA8fgmOrapaiaKVs=",
+        "ref": "refs/heads/main",
+        "rev": "09cd275dd93fb8283b49f21c2c7e88834fadb751",
+        "revCount": 7594,
+        "type": "git",
+        "url": "https://git.sable.moe/SableClient/sable-next"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.sable.moe/SableClient/sable-next"
       }
     },
     "systems": {
