@@ -6,7 +6,7 @@
   fetchFromGitHub,
   makeWrapper,
   nodejs,
-  electron_42,
+  electron_45,
   jq,
   makeDesktopItem,
   copyDesktopItems,
@@ -16,7 +16,7 @@
   ...
 }:
 let
-  electron = electron_42;
+  electron = electron_45;
 in
 buildNpmPackage (finalAttrs: {
   pname = "sable-client-electron";
@@ -25,11 +25,11 @@ buildNpmPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "jvyden";
     repo = "Sable-Client-Electron";
-    rev = "10d947335a5172ee7f46af717247a951ae3451a0";
-    hash = "sha256-MHIjLU65Onl0SXaby6jMQzMumYoWiDbhpOE17JqZoYA=";
+    rev = "3dfe5cad6554b8c6275d165a2931e85c02adb9a2";
+    hash = "sha256-Hod+rAa2nSctVnSNESJkv17lY8kkhxahewlJ8x/kVLc=";
   };
 
-  npmDepsHash = "sha256-kI1oaQsHvxmZgYXar+zqn+GKJVD1w4MDugNjaacflO4=";
+  npmDepsHash = "sha256-uZIz9Z3hpEOBMhyO6uexZFENitG+K36Ha7ism+MAeGQ=";
 
   env = {
     ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
