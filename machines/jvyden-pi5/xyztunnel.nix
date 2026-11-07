@@ -15,7 +15,7 @@
     wg0 = {
       address = [
         "fd31:bf08:57cb::2/64"
-        "192.168.1.2/24"
+        "192.168.69.2/24"
       ];
       dns = [ "127.0.0.1" ];
       privateKeyFile = config.age.secrets."xyztunnel-key-private".path;
@@ -24,8 +24,8 @@
           # TODO: obscure pubkey and rotate
           publicKey = "nD5TtvhI6sW/XfYT0JnF4EUDT4E555gYn4sGt9hD81I=";
           allowedIPs = [
-            "0.0.0.0/0"
-            "::/0"
+            "192.168.69.0/24"
+            "fd31:bf08:57cb::/64"
           ];
           endpoint = "jvyden.xyz:51820";
           persistentKeepalive = 25;
