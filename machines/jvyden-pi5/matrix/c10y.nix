@@ -27,7 +27,7 @@
 
         cache_capacity_modifier = 0.5;
         dns_cache_entries = 0;
-        ip_lookup_strategy = 4;
+        ip_lookup_strategy = 5;
 
         max_request_size = 104857600;
 
