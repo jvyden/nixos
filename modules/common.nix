@@ -106,6 +106,9 @@
     };
   };
 
+  # other core system stuff
+  services.fstrim.enable = true;
+
   # common CLI programs
   environment.systemPackages = with pkgs; [
     tree
