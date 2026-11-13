@@ -23,7 +23,6 @@
     android-tools
     websocat
     unityhub
-    alcom
     zig
     blender
     kdePackages.kdenlive
