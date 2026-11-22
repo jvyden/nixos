@@ -75,7 +75,6 @@
         url_preview_timeout = 120;
         url_preview_allow_audio_video = true;
         url_preview_check_root_domain = true;
-        url_preview_bound_interface = "wg0";
 
         well_known = {
           client = "https://matrix.jvyden.xyz";
