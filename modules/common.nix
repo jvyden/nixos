@@ -132,5 +132,12 @@
     icu
     jq
     wget
+    unzip
+    unrar
+    p7zip
+    speedtest-cli
+    gh
+    lynx
+    dos2unix
   ];
 }

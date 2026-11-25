@@ -16,5 +16,7 @@
     protonup-qt
     osu-lazer-bin
     mangohud
+    gale
+    prismlauncher
   ];
 }

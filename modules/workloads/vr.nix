@@ -43,6 +43,7 @@
     xrizer
     vrcx
     bs-manager
+    xrgears
   ];
 
   services.udev.packages = with pkgs; [ xr-hardware ];

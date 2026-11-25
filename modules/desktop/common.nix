@@ -89,10 +89,18 @@
       scrcpy
       parsec-bin
       wine64
+      winetricks
       krita
       gimp
       nicotine-plus
       anki
+      gparted-full
+      cdrtools
+      element-desktop
+      kdiskmark
+      localsend
+      audacity
+      webcamoid
     ]
     ++ (with sable.packages.${pkgs.stdenv.hostPlatform.system}; [
       sable-desktop

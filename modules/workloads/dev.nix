@@ -26,6 +26,7 @@
     zig
     blender
     kdePackages.kdenlive
+    gource
   ];
 
   virtualisation.docker.enable = true;
